@@ -7,15 +7,15 @@ namespace ArmorAndAccessoryPrefixes.Common.Config {
 
         public override ConfigScope Mode => ConfigScope.ServerSide;
 
-        [Label("New Accessory prefixes")]
+        [Label("[i:158] New Accessory prefixes")]
         [DefaultValue(true)]
         public bool AccessoryPrefixes { get; set; }
 
-        [Label("Armor Prefixes")]
+        [Label("[i:81] Armor Prefixes")]
         [DefaultValue(true)]
         public bool ArmorPrefixes { get; set; }
 
-        [Label("Remove 1% and 3% prefixes")]
+        [Label("[i:509] Remove 1% and 3% prefixes")]
         [DefaultValue(true)]
         public bool RemoveSteps { get; set; }
     }
