@@ -51,6 +51,11 @@ To report any bugs or give feedback, message me on discord (stormytuna#2688) or 
 
 [b]Changelog[/b]
 [list]
+[*][i]v1.1.0[/i]
+[list]
+[*]Added config options to individually toggle each pair of prefixes
+[*]Fixed an issue where critical strike damage tooltips were not displaying properly
+[/list]
 [*][i]v1.0.0[/i]
 [list]
 [*]Released
