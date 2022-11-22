@@ -1,0 +1,60 @@
+Armor and Accessory Prefixes adds a handful of prefixes to accessories and armors. It also removes some vanilla accessory prefixes to reduce bloat in the prefix pool
+
+This mod adds unique armor accessories, like Vital that will increase your max HP, and Shattering that will increase your armor penetration. This mod also adds more accessory prefixes, like Gravitating that will increase your item pickup range
+
+[hr][/hr]
+
+[h2][b]Armor Prefixes[/b][/h2]
+[list]
+[*]Hearty - +15 max HP
+[*]Vital - +30 max HP
+[*]Blessed - +5% crit damage
+[*]Exalted - +10% crit damage
+[*]Tranquil - Enemies are less likely to target you
+[*]Seething - Enemies are more likely to target you
+[*]Holy - +1 life regeneration
+[*]Divine - +2 life regeneration
+[*]Vaulting (legs only) - +15% jump speed
+[*]Leaping (legs only) - +30% jump speed
+[*]Escalating (legs only) - +25% acceleration
+[*]Accelerating (legs only) - +50% acceleration
+[*]Bulky (body only) - +4% damage reduction
+[*]Fortified (body only) - +8% damage reduction
+[*]Lofty (body only) - +0.5s flight time
+[*]Soaring (body only) - +1s flight time
+[*]Piercing (head only) - +2 armour penetration
+[*]Shattering (head only) - +4 armour penetration
+[*]Caster's (head only) - +1 minion slot
+[*]Defender's (head only) - +1 sentry slot
+[/list]
+
+[h2][b]Accessory Prefixes[/b][/h2]
+[list]
+[*]Spellbound - +40 max mana
+[*]Plentiful - +10% reduced ammo consumption
+[*]Bountiful - +20% reduced ammo consumption
+[*]Sturdy - +0.5 minion knockback
+[*]Colossal - +1 minion knockback
+[*]Reaching - +1 tile reach
+[*]Extending - +2 tile reach
+[*]Pulling - +2 item pickup range
+[*]Gravitating - +4 item pickup range
+[*]Speedy - +5% mining speed
+[*]Turbo - +10% mining speed
+[/list]
+
+[h2][b]Removed Accessory Prefixes[/b][/h2]
+This mod removes every +1% and +3% vanilla prefix as all the prefixes added are equivalents of +2% and +4%
+You can disable this if you'd like, but it isn't recommended as this mod doesn't add more steps for modded prefixes
+
+[hr][/hr]
+
+To report any bugs or give feedback, message meon discord (stormytuna#2688) or leave a comment on the Steam Workshop. You can also report bugs by creating an issue on the GitHub repo.
+
+[b]Changelog[/b]
+[list]
+[*][i]v1.0.0[/i]
+[list]
+[*]Released
+[/list]
+[/list]

@@ -1,1 +1,7 @@
-Armor and Accessory Prefixes is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+Armor and Accessory Prefixes adds a handful of prefixes to accessories and armors. It also removes some vanilla accessory prefixes to reduce bloat in the prefix pool
+
+This mod adds unique armor accessories, like Vital that will increase your max HP, and Shattering that will increase your armor penetration. This mod also adds more accessory prefixes, like Gravitating that will increase your item pickup range
+
+For a full list of added prefixes visit this item on the Steam Workshop
+
+To report any bugs or give feedback, message me on discord (stormytuna#2688) or leave a comment on the Steam Workshop. You can also report bugs by creating an issue on the GitHub repo.
