@@ -17,8 +17,8 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
             PrefixID.Armored,
             PrefixID.Jagged,
             PrefixID.Angry,
-            PrefixID.Fleeting,
-            PrefixID.Quick,
+            PrefixID.Brisk,
+            PrefixID.Hasty2,
             PrefixID.Wild,
             PrefixID.Intrepid,
         };
