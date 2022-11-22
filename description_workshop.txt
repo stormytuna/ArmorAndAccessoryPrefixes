@@ -1,7 +1,5 @@
 Armor and Accessory Prefixes adds a handful of prefixes to accessories and armors. It also removes some vanilla accessory prefixes to reduce bloat in the prefix pool
 
-This mod adds unique armor accessories, like Vital that will increase your max HP, and Shattering that will increase your armor penetration. This mod also adds more accessory prefixes, like Gravitating that will increase your item pickup range
-
 [hr][/hr]
 
 [h2][b]Armor Prefixes[/b][/h2]
