@@ -23,7 +23,12 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
 
         public override void UpdateEquip(Item item, Player player) {
             player.statManaMax2 += MaxMana;
-            player.GetModPlayer<AccessoryPlayer>().ReducedAmmo = ReducedAmmo;
+            if (ReducedAmmo == 0.1f) {
+                player.GetModPlayer<AccessoryPlayer>().ReducedAmmoTier1++;
+            }
+            if (ReducedAmmo == 0.2f) {
+                player.GetModPlayer<AccessoryPlayer>().ReducedAmmoTier2++;
+            }
             player.GetKnockback(DamageClass.Summon) += MinionKnockback;
             player.blockRange += TileReach;
             player.GetModPlayer<AccessoryPlayer>().PickupRange = PickupRange;
@@ -129,12 +134,14 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
     }
 
     public class AccessoryPlayer : ModPlayer {
-        public float ReducedAmmo { get; set; }
+        public int ReducedAmmoTier1 { get; set; }
+        public int ReducedAmmoTier2 { get; set; }
 
         public int PickupRange { get; set; }
 
         public override void ResetEffects() {
-            ReducedAmmo = 0f;
+            ReducedAmmoTier1 = 0;
+            ReducedAmmoTier2 = 0;
             PickupRange = 0;
         }
 
@@ -155,8 +162,17 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
         }
 
         public override bool CanConsumeAmmo(Item weapon, Item ammo) {
-            if (Main.rand.NextFloat() < ReducedAmmo) {
-                return false;
+            // Weird solution ik but it's the easiest way to fix getting infinite ammo from additive bonuses
+            for (int i = 0; i < ReducedAmmoTier1; i++) {
+                if (Main.rand.NextBool(10)) {
+                    return false;
+                }
+            }
+
+            for (int i = 0; i < ReducedAmmoTier2; i++) {
+                if (Main.rand.NextBool(5)) {
+                    return false;
+                }
             }
 
             return base.CanConsumeAmmo(weapon, ammo);
