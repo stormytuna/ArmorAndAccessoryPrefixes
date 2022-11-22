@@ -66,7 +66,7 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
             }
 
             if (PickupRange > 0) {
-                TooltipLine line = new(Mod, "PrefixPickupRange", $"+{PickupRange} pickup range");
+                TooltipLine line = new(Mod, "PrefixPickupRange", $"+{PickupRange} item pickup range");
                 line.IsModifier = true;
                 tooltips.Insert(index, line);
             }

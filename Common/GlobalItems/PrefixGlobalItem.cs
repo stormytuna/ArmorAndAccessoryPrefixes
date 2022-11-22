@@ -88,18 +88,18 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
 
         public override int ChoosePrefix(Item item, UnifiedRandom rand) {
             // Gives armor prefixes
-            if (item.IsArmor() && ServerConfig.Instance.ArmorPrefixes) {
-                List<int> prefixes = armorPrefixes.ToList();
-                if (item.legSlot > 0) {
-                    prefixes.AddRange(legPrefixes.ToList());
+            if (item.IsArmor()) {
+                var prefixes = PrefixLoader.GetPrefixesInCategory(PrefixCategory.Custom);
+                List<ModPrefix> rollable = new();
+                foreach (var pre in prefixes) {
+                    if (pre.CanRoll(item)) {
+                        prefixes.Add(pre);
+                    }
                 }
-                if (item.bodySlot > 0) {
-                    prefixes.AddRange(bodyPrefixes.ToList());
+
+                if (rollable.Count > 0) {
+                    return rand.NextFromList(rollable.ToArray()).Type;
                 }
-                if (item.headSlot > 0) {
-                    prefixes.AddRange(headPrefixes.ToList());
-                }
-                return rand.NextFromList(prefixes.ToArray());
             }
 
             // Don't need to add our accessory prefixes here as they can be naturally rolled

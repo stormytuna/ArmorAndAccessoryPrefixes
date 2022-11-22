@@ -1,9 +1,10 @@
-﻿using ArmorAndAccessoryPrefixes.Common.GlobalItems;
+﻿using ArmorAndAccessoryPrefixes.Common.Config;
+using ArmorAndAccessoryPrefixes.Common.GlobalItems;
 using Terraria;
 
 namespace ArmorAndAccessoryPrefixes.Content.Prefixes.Armor {
     public class Tranquil : ArmorPrefix {
-        public override bool CanRoll(Item item) => item.IsArmor();
+        public override bool CanRoll(Item item) => item.IsArmor() && ServerConfig.Instance.TranquilSeething;
 
         public override void ModifyValue(ref float valueMult) => valueMult = 1.15f;
 

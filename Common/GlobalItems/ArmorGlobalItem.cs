@@ -50,7 +50,7 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
             }
 
             if (CritDamage > 1f) {
-                int critDamageBonus = (int)MathF.Abs((1f - CritDamage) * 100f);
+                int critDamageBonus = CritDamage == 1.05f ? 10 : 5;
                 TooltipLine line = new(Mod, "PrefixCritDamage", $"+{critDamageBonus}% critical strike damage");
                 line.IsModifier = true;
                 tooltips.Insert(index, line);

@@ -4,7 +4,7 @@ using Terraria;
 
 namespace ArmorAndAccessoryPrefixes.Content.Prefixes.Accessory {
     public class Plentiful : AccessoryPrefix {
-        public override bool CanRoll(Item item) => item.accessory && ServerConfig.Instance.AccessoryPrefixes;
+        public override bool CanRoll(Item item) => item.accessory && ServerConfig.Instance.AccessoryPrefixes && ServerConfig.Instance.PlentifulBountiful;
 
         public override void ModifyValue(ref float valueMult) => valueMult = 1.1f;
 
