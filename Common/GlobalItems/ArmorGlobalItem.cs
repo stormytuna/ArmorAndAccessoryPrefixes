@@ -76,38 +76,38 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
 
             if (JumpSpeedBoost > 0f) {
                 int jumpSpeed = (int)(JumpSpeedBoost * 20f);
-                TooltipLine line = new(Mod, "PrefixLifeRegen", $"+{jumpSpeed}% jump speed");
+                TooltipLine line = new(Mod, "PrefixJumpSpeedBoost", $"+{jumpSpeed}% jump speed");
                 line.IsModifier = true;
                 tooltips.Insert(index, line);
             }
 
             if (RunSpeedBoost > 1f) {
                 int accel = (int)MathF.Abs((1f - RunSpeedBoost) * 100f);
-                TooltipLine line = new(Mod, "PrefixLifeRegen", $"+{accel}% acceleration");
+                TooltipLine line = new(Mod, "PrefixAcceleration", $"+{accel}% acceleration");
                 line.IsModifier = true;
                 tooltips.Insert(index, line);
             }
 
             if (ArmorPenetration > 0) {
-                TooltipLine line = new(Mod, "PrefixLifeRegen", $"+{ArmorPenetration} armor penetration");
+                TooltipLine line = new(Mod, "PrefixArmorPenetration", $"+{ArmorPenetration} armor penetration");
                 line.IsModifier = true;
                 tooltips.Insert(index, line);
             }
 
             if (MinionSlots > 0) {
-                TooltipLine line = new(Mod, "PrefixLifeRegen", $"+{MinionSlots} minion slot");
+                TooltipLine line = new(Mod, "PrefixMinionSlots", $"+{MinionSlots} minion slot");
                 line.IsModifier = true;
                 tooltips.Insert(index, line);
             }
 
             if (SentrySlots > 0) {
-                TooltipLine line = new(Mod, "PrefixLifeRegen", $"+{SentrySlots} sentry slot");
+                TooltipLine line = new(Mod, "PrefixSentrySlots", $"+{SentrySlots} sentry slot");
                 line.IsModifier = true;
                 tooltips.Insert(index, line);
             }
 
             if (DamageReduction > 0) {
-                TooltipLine line = new(Mod, "PrefixLifeRegen", $"+{DamageReduction}% reduced damage");
+                TooltipLine line = new(Mod, "PrefixDamageReduction", $"+{DamageReduction}% reduced damage");
                 line.IsModifier = true;
                 tooltips.Insert(index, line);
             }
@@ -115,7 +115,7 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
             if (FlightTime > 0) {
                 float flightTimeInSeconds = (float)FlightTime / 60f;
                 string flightTime = string.Format("{0:0.#}", flightTimeInSeconds);
-                TooltipLine line = new(Mod, "PrefixLifeRegen", $"+{flightTime}s flight time");
+                TooltipLine line = new(Mod, "PrefixFlightTime", $"+{flightTime}s flight time");
                 line.IsModifier = true;
                 tooltips.Insert(index, line);
             }
