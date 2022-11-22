@@ -1,9 +1,10 @@
-﻿using ArmorAndAccessoryPrefixes.Common.GlobalItems;
+﻿using ArmorAndAccessoryPrefixes.Common.Config;
+using ArmorAndAccessoryPrefixes.Common.GlobalItems;
 using Terraria;
 
 namespace ArmorAndAccessoryPrefixes.Content.Prefixes.Accessory {
     public class Gravitating : AccessoryPrefix {
-        public override bool CanRoll(Item item) => item.accessory;
+        public override bool CanRoll(Item item) => item.accessory && ServerConfig.Instance.AccessoryPrefixes;
 
         public override void ModifyValue(ref float valueMult) => valueMult = 1.2f;
 
