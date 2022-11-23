@@ -1,5 +1,4 @@
 ﻿using ArmorAndAccessoryPrefixes.Common.Config;
-using ArmorAndAccessoryPrefixes.Content.Prefixes.Armor;
 using System.Collections.Generic;
 using System.Linq;
 using Terraria;
@@ -21,38 +20,6 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
             PrefixID.Hasty2,
             PrefixID.Wild,
             PrefixID.Intrepid,
-        };
-
-        private static int[] armorPrefixes = new int[] {
-            ModContent.PrefixType<Hearty>(),
-            ModContent.PrefixType<Vital>(),
-            ModContent.PrefixType<Blessed>(),
-            ModContent.PrefixType<Exalted>(),
-            ModContent.PrefixType<Tranquil>(),
-            ModContent.PrefixType<Seething>(),
-            ModContent.PrefixType<Holy>(),
-            ModContent.PrefixType<Divine>()
-        };
-
-        private static int[] legPrefixes = new int[] {
-            ModContent.PrefixType<Vaulting>(),
-            ModContent.PrefixType<Leaping>(),
-            ModContent.PrefixType<Escalating>(),
-            ModContent.PrefixType<Accelerating>()
-        };
-
-        private static int[] bodyPrefixes = new int[] {
-            ModContent.PrefixType<Bulky>(),
-            ModContent.PrefixType<Fortified>(),
-            ModContent.PrefixType<Lofty>(),
-            ModContent.PrefixType<Soaring>()
-        };
-
-        private static int[] headPrefixes = new int[] {
-            ModContent.PrefixType<Piercing>(),
-            ModContent.PrefixType<Shattering>(),
-            ModContent.PrefixType<Casters>(),
-            ModContent.PrefixType<Defenders>()
         };
 
         public override bool? PrefixChance(Item item, int pre, UnifiedRandom rand) {
