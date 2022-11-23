@@ -46,7 +46,7 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
 
         public override bool AllowPrefix(Item item, int pre) {
             // Removes prefixes from accessories
-            if (removedAccessoryPrefixes.Contains(pre) && ServerConfig.Instance.RemoveSteps) {
+            if (removedAccessoryPrefixes.Contains(pre) && item.accessory && ServerConfig.Instance.RemoveSteps) {
                 return false;
             }
 
