@@ -51,6 +51,10 @@ To report any bugs or give feedback, message me on discord (stormytuna#2688) or 
 
 [b]Changelog[/b]
 [list]
+[*][i]v1.1.1[/i]
+[list]
+[*]Fixed an issue with infinite load times
+[/list]
 [*][i]v1.1.0[/i]
 [list]
 [*]Added config options to individually toggle each pair of prefixes
