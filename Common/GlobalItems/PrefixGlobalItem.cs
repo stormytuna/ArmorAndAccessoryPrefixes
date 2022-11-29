@@ -29,8 +29,9 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
                     case -3:
                         return true;
                     // Armor spawns in with a prefix 50% of the time
+                    // maxStack check here prevents things like buckets getting prefixes when being crafted
                     case -1:
-                        return Utils.NextBool(rand, 2);
+                        return Utils.NextBool(rand, 2) && item.maxStack == 1;
                 }
             }
 
@@ -60,7 +61,7 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
                 List<ModPrefix> rollable = new();
                 foreach (var pre in prefixes) {
                     if (pre.CanRoll(item)) {
-                        prefixes.Add(pre);
+                        rollable.Add(pre);
                     }
                 }
 
@@ -72,6 +73,17 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
             // Don't need to add our accessory prefixes here as they can be naturally rolled
 
             return base.ChoosePrefix(item, rand);
+        }
+
+        public override void UpdateInventory(Item item, Player player) {
+            if (item.IsArmor()) {
+                item.accessory = false;
+
+                if (item.canBePlacedInVanityRegardlessOfConditions && !item.vanity) {
+                    item.vanity = true;
+                    item.canBePlacedInVanityRegardlessOfConditions = false;
+                }
+            }
         }
     }
 }

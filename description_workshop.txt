@@ -51,6 +51,14 @@ To report any bugs or give feedback, message me on discord (stormytuna#2688) or 
 
 [b]Changelog[/b]
 [list]
+[*][i]v1.1.3[/i]
+[list]
+[*]Fixed an issue that let stackable armour gain prefixes
+[/list]
+[*][i]v1.1.2[/i]
+[list]
+[*]Fixed an issue preventing armor from being rerolled
+[/list]
 [*][i]v1.1.1[/i]
 [list]
 [*]Fixed an issue with infinite load times
