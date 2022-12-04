@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
@@ -40,8 +41,8 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
         }
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips) {
-            // Should be after the last "Tooltip*" line
-            int index = tooltips.FindLastIndex(tip => tip.Name.StartsWith("Tooltip")) + 1;
+            // Should be after the last Tooltip but before any tooltips in our list
+            int index = tooltips.FindLastIndex(tip => !AccessoryGlobalItem.tooltipNamesToInsertBefore.Contains(tip.Name)) + 1;
 
             if (MaxHP > 0) {
                 TooltipLine line = new(Mod, "PrefixMaxHP", $"+{MaxHP} max life");
