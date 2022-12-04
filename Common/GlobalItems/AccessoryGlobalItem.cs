@@ -91,16 +91,6 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
         }
 
         #region Not sure what to tag this, just leave it alone i guess
-
-        public override void OnCreate(Item item, ItemCreationContext context) {
-            MaxMana = 0;
-            ReducedAmmo = 0f;
-            MinionKnockback = 0f;
-            TileReach = 0;
-            PickupRange = 0;
-            MiningSpeed = 0f;
-        }
-
         public override GlobalItem Clone(Item from, Item to) {
             var clone = (AccessoryGlobalItem)base.Clone(from, to);
             clone.MaxMana = MaxMana;

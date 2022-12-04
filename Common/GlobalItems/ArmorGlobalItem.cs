@@ -122,21 +122,6 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
         }
 
         #region Not sure what to tag this, just leave it alone i guess
-
-        public override void OnCreate(Item item, ItemCreationContext context) {
-            MaxHP = 0;
-            CritDamage = 1f;
-            Aggro = 0;
-            LifeRegen = 0;
-            JumpSpeedBoost = 0f;
-            RunSpeedBoost = 1f;
-            ArmorPenetration = 0;
-            MinionSlots = 0;
-            SentrySlots = 0;
-            DamageReduction = 0;
-            FlightTime = 0;
-        }
-
         public override GlobalItem Clone(Item from, Item to) {
             var clone = (ArmorGlobalItem)base.Clone(from, to);
             clone.MaxHP = MaxHP;
