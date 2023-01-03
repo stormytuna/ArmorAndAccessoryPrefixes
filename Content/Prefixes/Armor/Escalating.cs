@@ -4,7 +4,7 @@ using Terraria;
 
 namespace ArmorAndAccessoryPrefixes.Content.Prefixes.Armor {
     public class Escalating : ArmorPrefix {
-        public override bool CanRoll(Item item) => item.IsArmor() && ServerConfig.Instance.EscalatingAccelerating;
+        public override bool CanRoll(Item item) => item.legSlot > 0 && ServerConfig.Instance.EscalatingAccelerating;
 
         public override void ModifyValue(ref float valueMult) => valueMult = 1.1f;
 

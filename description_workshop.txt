@@ -51,6 +51,10 @@ To report any bugs or give feedback, message me on discord (stormytuna#2688) or 
 
 [b]Changelog[/b]
 [list]
+[*][i]v1.1.5[/i]
+[list]
+[*]Fixed an issue that let you put Escalating on any armor piece
+[/list]
 [*][i]v1.1.4[/i]
 [list]
 [*]Fixed an issue that made crafted items to not have prefixes applied
