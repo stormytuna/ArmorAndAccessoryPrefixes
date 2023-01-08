@@ -6,8 +6,10 @@ using Terraria.DataStructures;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
-    public class ArmorGlobalItem : GlobalItem {
+namespace ArmorAndAccessoryPrefixes.Common.GlobalItems
+{
+    public class ArmorGlobalItem : GlobalItem
+    {
         public override bool InstancePerEntity => true;
 
         public override bool AppliesToEntity(Item entity, bool lateInstantiation) => entity.IsArmor();
@@ -165,12 +167,15 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
             SentrySlots = tag.GetInt("sentrySlots");
             DamageReduction = tag.GetInt("damageReduction");
             FlightTime = tag.GetInt("flightTime");
+
+            Mod.Logger.Debug("Loaded data:" + tag.ToString());
         }
 
         #endregion
     }
 
-    public class ArmorPlayer : ModPlayer {
+    public class ArmorPlayer : ModPlayer
+    {
         public float CritDamage { get; set; }
 
         public int BonusFlightTime { get; set; }

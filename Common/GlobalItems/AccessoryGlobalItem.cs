@@ -4,22 +4,19 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
-    public class AccessoryGlobalItem : GlobalItem {
+namespace ArmorAndAccessoryPrefixes.Common.GlobalItems
+{
+    public class AccessoryGlobalItem : GlobalItem
+    {
         public override bool InstancePerEntity => true;
 
         public override bool AppliesToEntity(Item entity, bool lateInstantiation) => entity.accessory;
 
         public int MaxMana { get; set; } = 0;
-
         public float ReducedAmmo { get; set; } = 0f;
-
         public float MinionKnockback { get; set; } = 0f;
-
         public int TileReach { get; set; } = 0;
-
         public int PickupRange { get; set; } = 0;
-
         public float MiningSpeed { get; set; } = 0f;
 
         public override void UpdateEquip(Item item, Player player) {
@@ -36,7 +33,7 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
             player.pickSpeed += MiningSpeed;
         }
 
-        public static string[] tooltipNamesToInsertBefore = new string[] {
+        public static readonly string[] tooltipNamesToInsertBefore = new string[] {
             "SetBonus",
             "Expert",
             "SpecialPrice",
@@ -131,7 +128,8 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
         #endregion
     }
 
-    public class AccessoryPlayer : ModPlayer {
+    public class AccessoryPlayer : ModPlayer
+    {
         public int ReducedAmmoTier1 { get; set; }
         public int ReducedAmmoTier2 { get; set; }
 

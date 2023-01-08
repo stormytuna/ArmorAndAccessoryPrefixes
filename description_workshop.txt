@@ -51,6 +51,10 @@ To report any bugs or give feedback, message me on discord (stormytuna#2688) or 
 
 [b]Changelog[/b]
 [list]
+[*][i]v1.1.6[/i]
+[list]
+[*]Fixed an issue causing hanging when selecting a player
+[/list]
 [*][i]v1.1.5[/i]
 [list]
 [*]Fixed an issue that let you put Escalating on any armor piece

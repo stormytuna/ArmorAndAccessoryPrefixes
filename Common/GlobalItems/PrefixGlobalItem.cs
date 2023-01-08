@@ -6,9 +6,13 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Utilities;
 
-namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
-    public class PrefixGlobalItem : GlobalItem {
+namespace ArmorAndAccessoryPrefixes.Common.GlobalItems
+{
+    public class PrefixGlobalItem : GlobalItem
+    {
         public override bool AppliesToEntity(Item entity, bool lateInstantiation) => entity.IsArmor() || entity.accessory;
+
+        public override bool InstancePerEntity => true;
 
         // Helper properties that get a list of our prefixes
         private static int[] removedAccessoryPrefixes = new int[] {
@@ -45,13 +49,19 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems {
             return base.PrefixChance(item, pre, rand);
         }
 
+        private int rollCount = 0;
+
         public override bool AllowPrefix(Item item, int pre) {
             // Removes prefixes from accessories
-            if (removedAccessoryPrefixes.Contains(pre) && item.accessory && ServerConfig.Instance.RemoveSteps) {
+            if (removedAccessoryPrefixes.Contains(pre) && item.accessory && ServerConfig.Instance.RemoveSteps && rollCount < 10) {
+                rollCount++;
+
                 return false;
             }
 
-            return base.AllowPrefix(item, pre);
+            rollCount = 0;
+
+            return true;
         }
 
         public override int ChoosePrefix(Item item, UnifiedRandom rand) {
