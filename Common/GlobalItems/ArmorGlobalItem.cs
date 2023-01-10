@@ -167,8 +167,6 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems
             SentrySlots = tag.GetInt("sentrySlots");
             DamageReduction = tag.GetInt("damageReduction");
             FlightTime = tag.GetInt("flightTime");
-
-            Mod.Logger.Debug("Loaded data:" + tag.ToString());
         }
 
         #endregion

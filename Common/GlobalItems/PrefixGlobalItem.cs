@@ -85,6 +85,33 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems
             return base.ChoosePrefix(item, rand);
         }
 
+        public override bool PreReforge(Item item) {
+            if (item.TryGetGlobalItem<AccessoryGlobalItem>(out var accessoryGlobalItem)) {
+                accessoryGlobalItem.MaxMana = 0;
+                accessoryGlobalItem.ReducedAmmo = 0;
+                accessoryGlobalItem.MinionKnockback = 0;
+                accessoryGlobalItem.TileReach = 0;
+                accessoryGlobalItem.PickupRange = 0;
+                accessoryGlobalItem.MiningSpeed = 0;
+            }
+
+            if (item.TryGetGlobalItem<ArmorGlobalItem>(out var armorGlobalItem)) {
+                armorGlobalItem.MaxHP = 0;
+                armorGlobalItem.CritDamage = 1f;
+                armorGlobalItem.Aggro = 0;
+                armorGlobalItem.LifeRegen = 0;
+                armorGlobalItem.JumpSpeedBoost = 0f;
+                armorGlobalItem.RunSpeedBoost = 1f;
+                armorGlobalItem.ArmorPenetration = 0;
+                armorGlobalItem.MinionSlots = 0;
+                armorGlobalItem.SentrySlots = 0;
+                armorGlobalItem.DamageReduction = 0;
+                armorGlobalItem.FlightTime = 0;
+            }
+
+            return base.PreReforge(item);
+        }
+
         public override void UpdateInventory(Item item, Player player) {
             if (item.IsArmor()) {
                 item.accessory = false;
