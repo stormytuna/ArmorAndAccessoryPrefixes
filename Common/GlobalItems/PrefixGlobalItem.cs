@@ -70,7 +70,8 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems
                 var prefixes = PrefixLoader.GetPrefixesInCategory(PrefixCategory.Custom);
                 List<ModPrefix> rollable = new();
                 foreach (var pre in prefixes) {
-                    if (pre.CanRoll(item)) {
+                    bool isAllowed = ServerConfig.Instance.OtherModdedArmorPrefixes ? true : pre.Mod?.Name == "ArmorAndAccessoryPrefixes";
+                    if (pre.CanRoll(item) && isAllowed) {
                         rollable.Add(pre);
                     }
                 }

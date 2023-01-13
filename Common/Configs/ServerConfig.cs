@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel;
 using Terraria.ModLoader.Config;
 
-namespace ArmorAndAccessoryPrefixes.Common.Config {
-    public class ServerConfig : ModConfig {
+namespace ArmorAndAccessoryPrefixes.Common.Config
+{
+    public class ServerConfig : ModConfig
+    {
         public static ServerConfig Instance;
 
         public override ConfigScope Mode => ConfigScope.ServerSide;
@@ -24,6 +26,10 @@ namespace ArmorAndAccessoryPrefixes.Common.Config {
         [DefaultValue(true)]
         public bool RemoveSteps { get; set; }
 
+        [Label("[i:850] Allow armor to get prefixes from other mods")]
+        [ReloadRequired]
+        [DefaultValue(true)]
+        public bool OtherModdedArmorPrefixes { get; set; }
 
         [Header("Armor Prefixes")]
 

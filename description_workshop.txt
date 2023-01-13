@@ -51,6 +51,10 @@ To report any bugs or give feedback, message me on discord (stormytuna#2688) or 
 
 [b]Changelog[/b]
 [list]
+[*][i]v1.2[/i]
+[list]
+[*]Added a config option to disable prefixes on armor from other mods to prevent conflicts
+[/list]
 [*][i]v1.1.6[/i]
 [list]
 [*]Fixed an issue causing hanging when selecting a player
