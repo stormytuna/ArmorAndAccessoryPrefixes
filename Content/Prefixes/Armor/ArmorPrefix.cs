@@ -19,18 +19,21 @@ namespace ArmorAndAccessoryPrefixes.Content.Prefixes.Armor {
         }
 
         public override void Apply(Item item) {
-            var gi = item.GetGlobalItem<ArmorGlobalItem>();
-            gi.MaxHP = 0;
-            gi.CritDamage = 1f;
-            gi.Aggro = 0;
-            gi.LifeRegen = 0;
-            gi.JumpSpeedBoost = 0f;
-            gi.RunSpeedBoost = 1f;
-            gi.ArmorPenetration = 0;
-            gi.MinionSlots = 0;
-            gi.SentrySlots = 0;
-            gi.DamageReduction = 0;
-            gi.FlightTime = 0;
+            bool gotItem = item.TryGetGlobalItem(out ArmorGlobalItem gi);
+            if (gotItem)
+            {
+                gi.MaxHP = 0;
+                gi.CritDamage = 1f;
+                gi.Aggro = 0;
+                gi.LifeRegen = 0;
+                gi.JumpSpeedBoost = 0f;
+                gi.RunSpeedBoost = 1f;
+                gi.ArmorPenetration = 0;
+                gi.MinionSlots = 0;
+                gi.SentrySlots = 0;
+                gi.DamageReduction = 0;
+                gi.FlightTime = 0;
+            }   
         }
     }
 }

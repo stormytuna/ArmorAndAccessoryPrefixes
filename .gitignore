@@ -352,3 +352,6 @@ Border.png
 glow.png
 glow2.png
 icon_ase.ase
+
+.gitignore
+*.sln

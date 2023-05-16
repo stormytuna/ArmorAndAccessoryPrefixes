@@ -10,8 +10,11 @@ namespace ArmorAndAccessoryPrefixes.Content.Prefixes.Armor {
 
         public override void Apply(Item item) {
             base.Apply(item);
-
-            item.GetGlobalItem<ArmorGlobalItem>().MinionSlots = 1;
+            bool gotItem = item.TryGetGlobalItem(out ArmorGlobalItem gi);
+            if (gotItem)
+            {
+                gi.MinionSlots = 1;
+            }
         }
 
         public override string Name => "Caster's";

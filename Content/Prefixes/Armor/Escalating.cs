@@ -10,8 +10,11 @@ namespace ArmorAndAccessoryPrefixes.Content.Prefixes.Armor {
 
         public override void Apply(Item item) {
             base.Apply(item);
-
-            item.GetGlobalItem<ArmorGlobalItem>().RunSpeedBoost = 1.25f;
+            bool gotItem = item.TryGetGlobalItem(out ArmorGlobalItem gi);
+            if (gotItem)
+            {
+                gi.RunSpeedBoost = 1.25f;
+            }
         }
     }
 }

@@ -10,8 +10,11 @@ namespace ArmorAndAccessoryPrefixes.Content.Prefixes.Accessory {
 
         public override void Apply(Item item) {
             base.Apply(item);
-
-            item.GetGlobalItem<AccessoryGlobalItem>().MiningSpeed = 0.05f;
+            bool gotItem = item.TryGetGlobalItem(out AccessoryGlobalItem gi);
+            if (gotItem)
+            {
+                gi.MiningSpeed = 0.05f;
+            }
         }
     }
 }
