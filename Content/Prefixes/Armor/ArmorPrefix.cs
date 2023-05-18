@@ -23,7 +23,7 @@ namespace ArmorAndAccessoryPrefixes.Content.Prefixes.Armor {
             if (gotItem)
             {
                 gi.MaxHP = 0;
-                gi.CritDamage = 1f;
+                gi.CritDamage = 0f;
                 gi.Aggro = 0;
                 gi.LifeRegen = 0;
                 gi.JumpSpeedBoost = 0f;

@@ -13,7 +13,7 @@ namespace ArmorAndAccessoryPrefixes.Content.Prefixes.Armor {
             bool gotItem = item.TryGetGlobalItem(out ArmorGlobalItem gi);
             if (gotItem)
             {
-                gi.CritDamage = 1.025f;
+                gi.CritDamage = 0.025f;
             }
         }
     }
