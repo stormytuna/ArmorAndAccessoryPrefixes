@@ -21,13 +21,16 @@ namespace ArmorAndAccessoryPrefixes.Content.Prefixes.Accessory {
         }
 
         public override void Apply(Item item) {
-            var gi = item.GetGlobalItem<AccessoryGlobalItem>();
-            gi.MaxMana = 0;
-            gi.ReducedAmmo = 0;
-            gi.MinionKnockback = 0;
-            gi.TileReach = 0;
-            gi.PickupRange = 0;
-            gi.MiningSpeed = 0;
+            bool gotItem = item.TryGetGlobalItem(out AccessoryGlobalItem gi);
+            if (gotItem)
+            {
+                gi.MaxMana = 0;
+                gi.ReducedAmmo = 0;
+                gi.MinionKnockback = 0;
+                gi.TileReach = 0;
+                gi.PickupRange = 0;
+                gi.MiningSpeed = 0;
+            }
         }
     }
 }

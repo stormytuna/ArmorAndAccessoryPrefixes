@@ -10,8 +10,11 @@ namespace ArmorAndAccessoryPrefixes.Content.Prefixes.Accessory {
 
         public override void Apply(Item item) {
             base.Apply(item);
-
-            item.GetGlobalItem<AccessoryGlobalItem>().ReducedAmmo = 0.2f;
+            bool gotItem = item.TryGetGlobalItem(out AccessoryGlobalItem gi);
+            if (gotItem)
+            {
+                gi.ReducedAmmo = 0.2f;
+            }
         }
     }
 }

@@ -10,8 +10,11 @@ namespace ArmorAndAccessoryPrefixes.Content.Prefixes.Armor {
 
         public override void Apply(Item item) {
             base.Apply(item);
-
-            item.GetGlobalItem<ArmorGlobalItem>().Aggro = -250;
+            bool gotItem = item.TryGetGlobalItem(out ArmorGlobalItem gi);
+            if (gotItem)
+            {
+                gi.Aggro = -250;
+            }
         }
     }
 }
