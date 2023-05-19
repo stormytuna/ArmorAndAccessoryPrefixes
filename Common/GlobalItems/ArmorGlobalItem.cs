@@ -15,7 +15,7 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems
         public override bool AppliesToEntity(Item entity, bool lateInstantiation) => entity.IsArmor();
 
         public int MaxHP { get; set; } = 0;
-        public float CritDamage { get; set; } = 1f;
+        public float CritDamage { get; set; } = 0f;
         public int Aggro { get; set; } = 0;
         public int LifeRegen { get; set; } = 0;
         public float JumpSpeedBoost { get; set; } = 0f;
@@ -26,10 +26,9 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems
         public int DamageReduction { get; set; } = 0;
         public int FlightTime { get; set; } = 0;
 
-
         public override void UpdateEquip(Item item, Player player) {
             player.statLifeMax2 += MaxHP;
-            player.GetModPlayer<ArmorPlayer>().CritDamage = CritDamage;
+            player.GetModPlayer<ArmorPlayer>().CritDamage += CritDamage;
             player.aggro += Aggro;
             player.lifeRegen += LifeRegen;
             player.jumpSpeedBoost += JumpSpeedBoost;
@@ -52,8 +51,8 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems
                 tooltips.Insert(index, line);
             }
 
-            if (CritDamage > 1f) {
-                int critDamageBonus = CritDamage == 1.05f ? 10 : 5;
+            if (CritDamage > 0f) {
+                int critDamageBonus = (int)(CritDamage * 200f);
                 TooltipLine line = new(Mod, "PrefixCritDamage", $"+{critDamageBonus}% critical strike damage");
                 line.IsModifier = true;
                 tooltips.Insert(index, line);
