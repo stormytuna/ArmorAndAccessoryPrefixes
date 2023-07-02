@@ -1,4 +1,4 @@
-Armor and Accessory Prefixes adds a handful of prefixes to accessories and armors. It also removes some vanilla accessory prefixes to reduce bloat in the prefix pool
+[b]Armor and Accessory Prefixes[/b] adds a handful of prefixes to accessories and armor. It also removes some vanilla accessory prefixes to reduce bloat in the prefix pool
 
 [hr][/hr]
 
@@ -43,50 +43,15 @@ Armor and Accessory Prefixes adds a handful of prefixes to accessories and armor
 
 [h2][b]Removed Accessory Prefixes[/b][/h2]
 This mod removes every +1% and +3% vanilla prefix as all the prefixes added are equivalents of +2% and +4%
-You can disable this if you'd like, but it isn't recommended as this mod doesn't add more steps for modded prefixes
+You can disable this if you'd like, but it isn't recommended as this mod doesn't add more steps for modded prefixes to compensate
 
 [hr][/hr]
 
-To report any bugs or give feedback, message me on discord (stormytuna#2688) or leave a comment on the Steam Workshop. You can also report bugs by creating an issue on the GitHub repo.
+To give feedback, visit [url=https://steamcommunity.com/workshop/filedetails/discussion/2891860612/3812908758679467395/]this thread here[/url] and post a comment.
+To report bugs, either [url=https://steamcommunity.com/sharedfiles/filedetails/discussions/2891860612/?newdiscussion=1]start a new discussion here[/url] or let me know in the comments. If I don't reply to a bug report discussion within a few days I likely haven't seen it, feel free to comment here to notify me.
 
-[b]Changelog[/b]
+[b]Latest Changes [i]1.3.0[/i][/b]
 [list]
-[*][i]v1.2[/i]
-[list]
-[*]Added a config option to disable prefixes on armor from other mods to prevent conflicts
-[/list]
-[*][i]v1.1.6[/i]
-[list]
-[*]Fixed an issue causing hanging when selecting a player
-[/list]
-[*][i]v1.1.5[/i]
-[list]
-[*]Fixed an issue that let you put Escalating on any armor piece
-[/list]
-[*][i]v1.1.4[/i]
-[list]
-[*]Fixed an issue that made crafted items to not have prefixes applied
-[*]Fixed an issue that caused some items to not display prefix tooltips
-[/list]
-[*][i]v1.1.3[/i]
-[list]
-[*]Fixed an issue that let stackable armour gain prefixes
-[/list]
-[*][i]v1.1.2[/i]
-[list]
-[*]Fixed an issue preventing armor from being rerolled
-[/list]
-[*][i]v1.1.1[/i]
-[list]
-[*]Fixed an issue with infinite load times
-[/list]
-[*][i]v1.1.0[/i]
-[list]
-[*]Added config options to individually toggle each pair of prefixes
-[*]Fixed an issue where critical strike damage tooltips were not displaying properly
-[/list]
-[*][i]v1.0.0[/i]
-[list]
-[*]Released
-[/list]
+[*]Fixed an issue where Gravitating and Pulling were not stacking or being applied properly
+[*]Fixed an issue where Turbo and Speedy actually [i]increased[/i] mining time instead of decreasing it
 [/list]
