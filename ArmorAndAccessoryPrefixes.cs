@@ -1,8 +1,5 @@
 using Terraria.ModLoader;
 
-namespace ArmorAndAccessoryPrefixes
-{
-	public class ArmorAndAccessoryPrefixes : Mod
-	{
-	}
-}
+namespace ArmorAndAccessoryPrefixes;
+
+public class ArmorAndAccessoryPrefixes : Mod { }

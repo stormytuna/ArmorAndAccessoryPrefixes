@@ -2,19 +2,19 @@
 using ArmorAndAccessoryPrefixes.Common.GlobalItems;
 using Terraria;
 
-namespace ArmorAndAccessoryPrefixes.Content.Prefixes.Armor {
-    public class Fortified : ArmorPrefix {
-        public override bool CanRoll(Item item) => item.bodySlot > 0 && ServerConfig.Instance.BulkyFortified;
+namespace ArmorAndAccessoryPrefixes.Content.Prefixes.Armor;
 
-        public override void ModifyValue(ref float valueMult) => valueMult = 1.2f;
+public class Fortified : ArmorPrefix
+{
+	public override bool CanRoll(Item item) => item.bodySlot > 0 && ServerConfig.Instance.BulkyFortified;
 
-        public override void Apply(Item item) {
-            base.Apply(item);
-            bool gotItem = item.TryGetGlobalItem(out ArmorGlobalItem gi);
-            if (gotItem)
-            {
-                gi.DamageReduction = 8;
-            }
-        }
-    }
+	public override void ModifyValue(ref float valueMult) => valueMult = 1.2f;
+
+	public override void Apply(Item item) {
+		base.Apply(item);
+		bool gotItem = item.TryGetGlobalItem(out ArmorGlobalItem gi);
+		if (gotItem) {
+			gi.DamageReduction = 8;
+		}
+	}
 }

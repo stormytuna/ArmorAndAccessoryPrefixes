@@ -2,19 +2,19 @@
 using ArmorAndAccessoryPrefixes.Common.GlobalItems;
 using Terraria;
 
-namespace ArmorAndAccessoryPrefixes.Content.Prefixes.Armor {
-    public class Shattering : ArmorPrefix {
-        public override bool CanRoll(Item item) => item.headSlot > 0 && ServerConfig.Instance.PiercingShattering;
+namespace ArmorAndAccessoryPrefixes.Content.Prefixes.Armor;
 
-        public override void ModifyValue(ref float valueMult) => valueMult = 1.2f;
+public class Shattering : ArmorPrefix
+{
+	public override bool CanRoll(Item item) => item.headSlot > 0 && ServerConfig.Instance.PiercingShattering;
 
-        public override void Apply(Item item) {
-            base.Apply(item);
-            bool gotItem = item.TryGetGlobalItem(out ArmorGlobalItem gi);
-            if (gotItem)
-            {
-                gi.ArmorPenetration = 4;
-            }
-        }
-    }
+	public override void ModifyValue(ref float valueMult) => valueMult = 1.2f;
+
+	public override void Apply(Item item) {
+		base.Apply(item);
+		bool gotItem = item.TryGetGlobalItem(out ArmorGlobalItem gi);
+		if (gotItem) {
+			gi.ArmorPenetration = 4;
+		}
+	}
 }

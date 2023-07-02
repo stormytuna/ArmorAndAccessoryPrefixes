@@ -2,19 +2,19 @@
 using ArmorAndAccessoryPrefixes.Common.GlobalItems;
 using Terraria;
 
-namespace ArmorAndAccessoryPrefixes.Content.Prefixes.Armor {
-    public class Exalted : ArmorPrefix {
-        public override bool CanRoll(Item item) => item.IsArmor() && ServerConfig.Instance.BlessedExalted;
+namespace ArmorAndAccessoryPrefixes.Content.Prefixes.Armor;
 
-        public override void ModifyValue(ref float valueMult) => valueMult = 1.2f;
+public class Exalted : ArmorPrefix
+{
+	public override bool CanRoll(Item item) => item.IsArmor() && ServerConfig.Instance.BlessedExalted;
 
-        public override void Apply(Item item) {
-            base.Apply(item);
-            bool gotItem = item.TryGetGlobalItem(out ArmorGlobalItem gi);
-            if (gotItem)
-            {
-                gi.CritDamage = 1.05f;
-            }
-        }
-    }
+	public override void ModifyValue(ref float valueMult) => valueMult = 1.2f;
+
+	public override void Apply(Item item) {
+		base.Apply(item);
+		bool gotItem = item.TryGetGlobalItem(out ArmorGlobalItem gi);
+		if (gotItem) {
+			gi.CritDamage = 1.05f;
+		}
+	}
 }
