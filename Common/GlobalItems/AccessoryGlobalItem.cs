@@ -29,8 +29,8 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems
             }
             player.GetKnockback(DamageClass.Summon) += MinionKnockback;
             player.blockRange += TileReach;
-            player.GetModPlayer<AccessoryPlayer>().PickupRange = PickupRange;
-            player.pickSpeed += MiningSpeed;
+            player.GetModPlayer<AccessoryPlayer>().PickupRange += PickupRange;
+            player.pickSpeed -= MiningSpeed;
         }
 
         public static readonly string[] tooltipNamesToInsertBefore = new string[] {
@@ -143,10 +143,6 @@ namespace ArmorAndAccessoryPrefixes.Common.GlobalItems
 
         public override void Load() {
             On.Terraria.Player.GetItemGrabRange += Player_GetItemGrabRange;
-        }
-
-        public override void Unload() {
-            On.Terraria.Player.GetItemGrabRange -= Player_GetItemGrabRange;
         }
 
         private int Player_GetItemGrabRange(On.Terraria.Player.orig_GetItemGrabRange orig, Player self, Item item) {
