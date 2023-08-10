@@ -1,4 +1,4 @@
-﻿using ArmorAndAccessoryPrefixes.Common.Config;
+﻿using ArmorAndAccessoryPrefixes.Common.Configs;
 using ArmorAndAccessoryPrefixes.Common.GlobalItems;
 using Terraria;
 

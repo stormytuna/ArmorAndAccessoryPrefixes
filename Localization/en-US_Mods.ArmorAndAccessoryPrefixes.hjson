@@ -1,0 +1,185 @@
+Configs: {
+	ServerConfig: {
+		DisplayName: Server Config
+
+		Headers: {
+			General: General
+			ArmorPrefixes: Armor Prefixes
+			AccessoryPrefixes: Accessory Prefixes Header
+		}
+
+		AccessoryPrefixes: {
+			Label: "[i:158] New Accessory prefixes"
+			Tooltip: ""
+		}
+
+		ArmorPrefixes: {
+			Label: "[i:81] Armor Prefixes"
+			Tooltip: ""
+		}
+
+		RemoveSteps: {
+			Label: "[i:509] Remove 1% and 3% prefixes"
+			Tooltip: ""
+		}
+
+		OtherModdedArmorPrefixes: {
+			Label: "[i:850] Allow armor to get prefixes from other mods"
+			Tooltip: ""
+		}
+
+		HeartyVital: {
+			Label: "[i:29] Hearty/Vital"
+			Tooltip:
+				'''
+				Applies to armor
+				+15/+30 max life
+				'''
+		}
+
+		BlessedExalted: {
+			Label: "[i:1248] Blessed/Exalted"
+			Tooltip:
+				'''
+				Applies to armor
+				+5%/+10% critical strike damage
+				'''
+		}
+
+		TranquilSeething: {
+			Label: "[i:3016] Tranquil/Seething"
+			Tooltip:
+				'''
+				Applies to armor
+				Enemies are less/more likely to target you
+				'''
+		}
+
+		HolyDivine: {
+			Label: "[i:49] Holy/Divine"
+			Tooltip:
+				'''
+				Applies to armor
+				+1/+2 life regeneration
+				'''
+		}
+
+		PiercingShattering: {
+			Label: "[i:3212] Piercing/Shattering"
+			Tooltip:
+				'''
+				Applies to head
+				+2/+4 armor penetration
+				'''
+		}
+
+		CasterDefender: {
+			Label: "[i:1158] Caster's/Defender's"
+			Tooltip:
+				'''
+				Applies to head
+				+1 minion/sentry slot
+				'''
+		}
+
+		BulkyFortified: {
+			Label: "[i:3224] Bulky/Fortified"
+			Tooltip:
+				'''
+				Applies to body
+				+4%/+8% damage reduction
+				'''
+		}
+
+		LoftySoaring: {
+			Label: "[i:493] Lofty/Soaring"
+			Tooltip:
+				'''
+				Applies to body
+				+0.5s/1s flight time
+				'''
+		}
+
+		VaultingLeaping: {
+			Label: "[i:2423] Vaulting/Leaping"
+			Tooltip:
+				'''
+				Applies to legs
+				+15%/+30% jump speed
+				'''
+		}
+
+		EscalatingAccelerating: {
+			Label: "[i:5107] Escalating/Accelerating"
+			Tooltip:
+				'''
+				Applies to legs
+				+25%/+50% acceleration
+				'''
+		}
+
+		Spellbound: {
+			Label: "[i:109] Spellbound"
+			Tooltip: +40 mana
+		}
+
+		PlentifulBountiful: {
+			Label: "[i:2177] Plentiful/Bountiful"
+			Tooltip: +10%/+20% reduced ammo consumption
+		}
+
+		SturdyColossal: {
+			Label: "[i:1167] Sturdy/Colossal"
+			Tooltip: +0.5/+1 minion knockback
+		}
+
+		ReachingExtending: {
+			Label: "[i:2215] Reaching/Extending"
+			Tooltip: +1/+2 tile range
+		}
+
+		PullingGravitating: {
+			Label: "[i:5010] Pulling/Gravitating"
+			Tooltip: +2/+4 item pickup range
+		}
+
+		SpeedyTurbo: {
+			Label: "[i:4056] Speedy/Turbo"
+			Tooltip: +5%/+10% mining speed
+		}
+	}
+}
+
+Prefixes: {
+	Bountiful.DisplayName: Bountiful
+	Colossal.DisplayName: Colossal
+	Extending.DisplayName: Extending
+	Gravitating.DisplayName: Gravitating
+	Plentiful.DisplayName: Plentiful
+	Pulling.DisplayName: Pulling
+	Reaching.DisplayName: Reaching
+	Speedy.DisplayName: Speedy
+	Spellbound.DisplayName: Spellbound
+	Sturdy.DisplayName: Sturdy
+	Turbo.DisplayName: Turbo
+	Accelerating.DisplayName: Accelerating
+	Blessed.DisplayName: Blessed
+	Bulky.DisplayName: Bulky
+	"Caster's.DisplayName": Caster's
+	"Defender's.DisplayName": Defender's
+	Divine.DisplayName: Divine
+	Escalating.DisplayName: Escalating
+	Exalted.DisplayName: Exalted
+	Fortified.DisplayName: Fortified
+	Hearty.DisplayName: Hearty
+	Holy.DisplayName: Holy
+	Leaping.DisplayName: Leaping
+	Lofty.DisplayName: Lofty
+	Piercing.DisplayName: Piercing
+	Seething.DisplayName: Seething
+	Shattering.DisplayName: Shattering
+	Soaring.DisplayName: Soaring
+	Tranquil.DisplayName: Tranquil
+	Vaulting.DisplayName: Vaulting
+	Vital.DisplayName: Vital
+}
