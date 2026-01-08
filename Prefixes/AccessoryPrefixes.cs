@@ -213,3 +213,51 @@ public class Gravitating : PickupRangePrefix
         valueMult *= 1.2f;
     }
 }
+
+public abstract class MiningSpeedPrefix : ModPrefix
+{
+    protected static LocalizedText MiningSpeedTooltip { get; private set; }
+
+    public abstract float MiningSpeed { get; }
+
+    public override PrefixCategory Category => PrefixCategory.Accessory;
+
+    public override void SetStaticDefaults()
+    {
+        MiningSpeedTooltip = Mod.GetLocalization($"PrefixTooltips.{nameof(MiningSpeedTooltip)}");
+    }
+
+    public override void Apply(Item item)
+    {
+        if (item.TryGetGlobalItem(out PrefixStats gi)) {
+            gi.MiningSpeed = MiningSpeed;
+        }
+    }
+
+    public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
+    {
+        yield return new TooltipLine(Mod, $"Prefix{nameof(MiningSpeedTooltip)}", MiningSpeedTooltip.Format((int)(MiningSpeed * 100f))) {
+            IsModifier = true
+        };
+    }
+}
+
+public class Speedy : MiningSpeedPrefix
+{
+	public override float MiningSpeed => 0.05f;
+
+    public override void ModifyValue(ref float valueMult)
+    {
+        valueMult *= 1.1f;
+    }
+}
+
+public class Turbo : MiningSpeedPrefix
+{
+	public override float MiningSpeed => 0.1f;
+
+    public override void ModifyValue(ref float valueMult)
+    {
+        valueMult *= 1.2f;
+    }
+}

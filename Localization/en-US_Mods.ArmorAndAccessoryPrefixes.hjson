@@ -9,12 +9,15 @@ Prefixes: {
 	Reaching.DisplayName: Reaching
 	Pulling.DisplayName: Pulling
 	Gravitating.DisplayName: Gravitating
+	Speedy.DisplayName: Speedy
+	Turbo.DisplayName: Turbo
 }
 
 PrefixTooltips: {
 	MinionKnockbackTooltip: +{0} minion knockback
 	TileReachTooltip: +{0} tile placement range
 	PickupRangePrefix: +{0} item pickup range
+	MiningSpeedTooltip: +{0}% mining speed
 }
 
 Configs.ServerConfig.DisplayName: Server Config

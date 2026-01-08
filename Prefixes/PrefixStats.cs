@@ -67,6 +67,10 @@ public class PrefixStats : GlobalItem
 			player.GetModPlayer<GrabRangePlayer>().GrabRange += PickupRange.Value;
 		}
 
+		if (MiningSpeed is not null) {
+			player.pickSpeed -= MiningSpeed.Value;
+		}
+
         // TODO: rest of them...
     }
 
