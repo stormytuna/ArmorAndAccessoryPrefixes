@@ -251,3 +251,51 @@ public class Leaping : JumpSpeedPrefix
 		valueMult *= 1.2f;
 	}
 }
+
+public abstract class ArmorPenPrefix : ArmorPrefix
+{
+    public abstract int ArmorPen { get; }
+
+	private static LocalizedText ArmorPenTooltip;
+
+    public override void SetStaticDefaults()
+    {
+        ArmorPenTooltip = Mod.GetLocalization($"PrefixTooltips.{nameof(ArmorPenTooltip)}");
+    }
+
+	public override bool CanRoll(Item item) {
+		return item.headSlot >= 0;
+	}
+
+    public override void Apply(Item item)
+    {
+        if (item.TryGetGlobalItem(out PrefixStats gi)) {
+            gi.ArmorPen = ArmorPen;
+        }
+    }
+
+    public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
+    {
+        yield return new TooltipLine(Mod, $"Prefix{nameof(ArmorPenTooltip)}", ArmorPenTooltip.Format(ArmorPen)) {
+            IsModifier = true
+        };
+    }
+}
+
+public class Piercing : ArmorPenPrefix
+{
+	public override int ArmorPen => 2;
+
+	public override void ModifyValue(ref float valueMult) {
+		valueMult *= 1.1f;
+	}
+}
+
+public class Shattering : ArmorPenPrefix
+{
+	public override int ArmorPen => 4;
+
+	public override void ModifyValue(ref float valueMult) {
+		valueMult *= 1.2f;
+	}
+}

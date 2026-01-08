@@ -21,6 +21,8 @@ Prefixes: {
 	Holy.DisplayName: Holy
 	Leaping.DisplayName: Leaping
 	Vaulting.DisplayName: Vaulting
+	Piercing.DisplayName: Piercing
+	Shattering.DisplayName: Shattering
 }
 
 PrefixTooltips: {
@@ -34,6 +36,7 @@ PrefixTooltips: {
 	ReducedAggroTooltip: Decreased aggro
 	LifeRegenTooltip: Regenerate {0} life per second
 	JumpSpeedBoostTooltip: +{0}% jump speed
+	ArmorPenTooltip: +{0} armor penetration
 }
 
 Configs.ServerConfig.DisplayName: Server Config

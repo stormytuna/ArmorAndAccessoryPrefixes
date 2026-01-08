@@ -19,7 +19,6 @@ public class PrefixStats : GlobalItem
     public int? Aggro = null;
     public int? LifeRegen = null;
     public float? JumpSpeedBoost = null;
-    public float? RunSpeedBoost = null;
     public int? ArmorPen = null;
     public int? MinionSlots = null;
     public int? SentrySlots = null;
@@ -41,7 +40,6 @@ public class PrefixStats : GlobalItem
 		Aggro = null;
 		LifeRegen = null;
 		JumpSpeedBoost = null;
-		RunSpeedBoost = null;
 		ArmorPen = null;
 		MinionSlots = null;
 		SentrySlots = null;
@@ -89,6 +87,10 @@ public class PrefixStats : GlobalItem
 
 		if (JumpSpeedBoost is not null) {
 			player.jumpSpeedBoost += JumpSpeedBoost.Value;
+		}
+
+		if (ArmorPen is not null) {
+			player.GetArmorPenetration(DamageClass.Generic) += ArmorPen.Value;
 		}
 
         // TODO: rest of them...
@@ -147,10 +149,6 @@ public class PrefixStats : GlobalItem
 
         if (JumpSpeedBoost is not null) {
             tag[nameof(JumpSpeedBoost)] = JumpSpeedBoost;
-        }
-
-        if (RunSpeedBoost is not null) {
-            tag[nameof(RunSpeedBoost)] = RunSpeedBoost;
         }
 
         if (ArmorPen is not null) {
@@ -218,10 +216,6 @@ public class PrefixStats : GlobalItem
 
         if (tag.ContainsKey(nameof(JumpSpeedBoost))) {
             JumpSpeedBoost = tag.GetFloat(nameof(JumpSpeedBoost));
-        }
-
-        if (tag.ContainsKey(nameof(RunSpeedBoost))) {
-            RunSpeedBoost = tag.GetFloat(nameof(RunSpeedBoost));
         }
 
         if (tag.ContainsKey(nameof(ArmorPen))) {
