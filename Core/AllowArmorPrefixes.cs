@@ -5,6 +5,10 @@ namespace ArmorAndAccessoryPrefixes.Core;
 
 public class AllowArmorPrefixes : GlobalItem
 {
+	public override bool IsLoadingEnabled(Mod mod) {
+		return ServerConfig.Instance.EnableArmorPrefixes;
+	}
+	
 	public override void Load() {
 		On_Item.CanHavePrefixes += (orig, self) => {
 			bool ret = orig(self);

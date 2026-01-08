@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using ArmorAndAccessoryPrefixes.Core;
 using Terraria.Localization;
 
 namespace ArmorAndAccessoryPrefixes.Prefixes;
@@ -8,7 +9,7 @@ public abstract class ArmorPrefix : ModPrefix
     public sealed override PrefixCategory Category => PrefixCategory.Custom;
 
 	public override bool CanRoll(Item item) {
-		return item.IsArmor();
+		return ServerConfig.Instance.EnableArmorPrefixes && item.IsArmor();
 	}
 }
 

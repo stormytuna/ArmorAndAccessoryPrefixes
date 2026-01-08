@@ -49,4 +49,23 @@ PrefixTooltips: {
 	FlightTimeTooltip: +{0}s flight time
 }
 
-Configs.ServerConfig.DisplayName: Server Config
+Configs: {
+	ServerConfig: {
+		DisplayName: Server Config
+
+		EnableArmorPrefixes: {
+			Label: Enable Armor Prefixes
+			Tooltip: ""
+		}
+
+		EnableNewAccessoryPrefixes: {
+			Label: Enable New Accessory Prefixes
+			Tooltip: ""
+		}
+
+		RemoveOddTierPrefixes: {
+			Label: Remove Odd Tier Prefixes
+			Tooltip: Removes Hard, Armored, Jagged, Angry, Brisk, Hasty, Wild, and Intrepid prefixes from accessories.
+		}
+	}
+}

@@ -1,13 +1,21 @@
 using System.Collections.Generic;
+using ArmorAndAccessoryPrefixes.Core;
 using Terraria.Localization;
 
 namespace ArmorAndAccessoryPrefixes.Prefixes;
 
-public class Spellbound : ModPrefix
+public abstract class AccessoryPrefix : ModPrefix
+{
+	public override PrefixCategory Category => PrefixCategory.Accessory;
+
+	public override bool CanRoll(Item item) {
+		return ServerConfig.Instance.EnableNewAccessoryPrefixes;
+	}
+}
+
+public class Spellbound : AccessoryPrefix
 {
     public const int MANA_AMOUNT = 40;
-
-    public override PrefixCategory Category => PrefixCategory.Accessory;
 
     public override void Apply(Item item)
     {
@@ -29,11 +37,9 @@ public class Spellbound : ModPrefix
     }
 }
 
-public abstract class AmmoPreservationPrefix : ModPrefix
+public abstract class AmmoPreservationPrefix : AccessoryPrefix
 {
     public abstract float AmmoPreservation { get; }
-
-    public override PrefixCategory Category => PrefixCategory.Accessory;
 
     public override void Apply(Item item)
     {
@@ -70,13 +76,11 @@ public class Bountiful : AmmoPreservationPrefix
     }
 }
 
-public abstract class MinionKnockbackPrefix : ModPrefix
+public abstract class MinionKnockbackPrefix : AccessoryPrefix
 {
     protected static LocalizedText MinionKnockbackTooltip { get; private set; }
 
     public abstract float MinionKnockback { get; }
-
-    public override PrefixCategory Category => PrefixCategory.Accessory;
 
     public override void SetStaticDefaults()
     {
@@ -118,13 +122,11 @@ public class Colossal : MinionKnockbackPrefix
     }
 }
 
-public abstract class TileReachPrefix : ModPrefix
+public abstract class TileReachPrefix : AccessoryPrefix
 {
     protected static LocalizedText TileReachTooltip { get; private set; }
 
     public abstract int TileReach { get; }
-
-    public override PrefixCategory Category => PrefixCategory.Accessory;
 
     public override void SetStaticDefaults()
     {
@@ -166,13 +168,11 @@ public class Extending : TileReachPrefix
     }
 }
 
-public abstract class PickupRangePrefix : ModPrefix
+public abstract class PickupRangePrefix : AccessoryPrefix
 {
     protected static LocalizedText PickupRangeTooltip { get; private set; }
 
     public abstract int PickupRange { get; }
-
-    public override PrefixCategory Category => PrefixCategory.Accessory;
 
     public override void SetStaticDefaults()
     {
@@ -214,13 +214,11 @@ public class Gravitating : PickupRangePrefix
     }
 }
 
-public abstract class MiningSpeedPrefix : ModPrefix
+public abstract class MiningSpeedPrefix : AccessoryPrefix
 {
     protected static LocalizedText MiningSpeedTooltip { get; private set; }
 
     public abstract float MiningSpeed { get; }
-
-    public override PrefixCategory Category => PrefixCategory.Accessory;
 
     public override void SetStaticDefaults()
     {
