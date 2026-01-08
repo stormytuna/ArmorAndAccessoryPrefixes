@@ -415,3 +415,51 @@ public class Fortified : DamageReductionPrefix
 		valueMult *= 1.2f;
 	}
 }
+
+public abstract class FlightTimePrefix : ArmorPrefix
+{
+    public abstract int FlightTime { get; }
+
+	private static LocalizedText FlightTimeTooltip;
+
+    public override void SetStaticDefaults()
+    {
+        FlightTimeTooltip = Mod.GetLocalization($"PrefixTooltips.{nameof(FlightTimeTooltip)}");
+    }
+
+	public override bool CanRoll(Item item) {
+		return item.bodySlot >= 0;
+	}
+
+    public override void Apply(Item item)
+    {
+        if (item.TryGetGlobalItem(out PrefixStats gi)) {
+            gi.FlightTime = FlightTime;
+        }
+    }
+
+    public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
+    {
+        yield return new TooltipLine(Mod, $"Prefix{nameof(FlightTimeTooltip)}", FlightTimeTooltip.Format(FlightTime / 60f)) {
+            IsModifier = true
+        };
+    }
+}
+
+public class Lofty : FlightTimePrefix
+{
+	public override int FlightTime => 30;
+
+	public override void ModifyValue(ref float valueMult) {
+		valueMult *= 1.1f;
+	}
+}
+
+public class Soaring : FlightTimePrefix
+{
+	public override int FlightTime => 60;
+
+	public override void ModifyValue(ref float valueMult) {
+		valueMult *= 1.2f;
+	}
+}

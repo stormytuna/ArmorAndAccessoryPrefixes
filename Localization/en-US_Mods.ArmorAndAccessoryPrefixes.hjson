@@ -27,6 +27,8 @@ Prefixes: {
 	Defenders.DisplayName: Defender's
 	Fortified.DisplayName: Fortified
 	Bulky.DisplayName: Bulky
+	Lofty.DisplayName: Lofty
+	Soaring.DisplayName: Soaring
 }
 
 PrefixTooltips: {
@@ -44,6 +46,7 @@ PrefixTooltips: {
 	IncreaseMinionSlotsTooltip: +{0} minion slot
 	IncreaseSentrySlotsTooltip: +{0} sentry slot
 	DamageReductionTooltip: +{0}% damage reduction
+	FlightTimeTooltip: +{0}s flight time
 }
 
 Configs.ServerConfig.DisplayName: Server Config

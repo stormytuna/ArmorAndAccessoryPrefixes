@@ -105,7 +105,9 @@ public class PrefixStats : GlobalItem
 			player.endurance += DamageReduction.Value;
 		}
 
-        // TODO: rest of them...
+		if (FlightTime is not null) {
+			player.GetModPlayer<MaxFlightTimePlayer>().ExtraMaxFlightTime += FlightTime.Value;
+		}
     }
 
     public override bool CanConsumeAmmo(Item weapon, Item ammo, Player player)
