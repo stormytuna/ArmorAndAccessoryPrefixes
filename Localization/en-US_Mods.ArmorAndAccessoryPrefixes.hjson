@@ -1,0 +1,11 @@
+Prefixes: {
+	TestPrefix.DisplayName: Test Prefix
+	Spellbound.DisplayName: Spellbound
+	Extended.DisplayName: Extended
+	Bountiful.DisplayName: Bountiful
+	Sturdy.DisplayName: Sturdy
+	Colossal.DisplayName: Colossal
+}
+
+PrefixTooltips.MinionKnockbackTooltip: +{0} minion knockback
+Configs.ServerConfig.DisplayName: Server Config
