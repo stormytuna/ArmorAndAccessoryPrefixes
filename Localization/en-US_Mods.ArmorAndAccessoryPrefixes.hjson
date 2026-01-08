@@ -11,6 +11,8 @@ Prefixes: {
 	Gravitating.DisplayName: Gravitating
 	Speedy.DisplayName: Speedy
 	Turbo.DisplayName: Turbo
+	Vital.DisplayName: Vital
+	Hearty.DisplayName: Hearty
 }
 
 PrefixTooltips: {
@@ -18,6 +20,7 @@ PrefixTooltips: {
 	TileReachTooltip: +{0} tile placement range
 	PickupRangePrefix: +{0} item pickup range
 	MiningSpeedTooltip: +{0}% mining speed
+	MaxHPTooltip: +{0} max life
 }
 
 Configs.ServerConfig.DisplayName: Server Config
