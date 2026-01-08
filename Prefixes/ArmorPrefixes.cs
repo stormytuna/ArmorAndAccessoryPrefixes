@@ -367,3 +367,51 @@ public class Defenders : ArmorPrefix
         };
     }
 }
+
+public abstract class DamageReductionPrefix : ArmorPrefix
+{
+    public abstract float DamageReduction { get; }
+
+	private static LocalizedText DamageReductionTooltip;
+
+    public override void SetStaticDefaults()
+    {
+        DamageReductionTooltip = Mod.GetLocalization($"PrefixTooltips.{nameof(DamageReductionTooltip)}");
+    }
+
+	public override bool CanRoll(Item item) {
+		return item.bodySlot >= 0;
+	}
+
+    public override void Apply(Item item)
+    {
+        if (item.TryGetGlobalItem(out PrefixStats gi)) {
+            gi.DamageReduction = DamageReduction;
+        }
+    }
+
+    public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
+    {
+        yield return new TooltipLine(Mod, $"Prefix{nameof(DamageReductionTooltip)}", DamageReductionTooltip.Format((int)(DamageReduction * 100f))) {
+            IsModifier = true
+        };
+    }
+}
+
+public class Bulky : DamageReductionPrefix
+{
+	public override float DamageReduction => 0.04f;
+
+	public override void ModifyValue(ref float valueMult) {
+		valueMult *= 1.1f;
+	}
+}
+
+public class Fortified : DamageReductionPrefix
+{
+	public override float DamageReduction => 0.08f;
+
+	public override void ModifyValue(ref float valueMult) {
+		valueMult *= 1.2f;
+	}
+}

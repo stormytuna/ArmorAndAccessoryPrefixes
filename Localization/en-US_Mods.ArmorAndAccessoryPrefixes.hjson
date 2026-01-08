@@ -25,6 +25,8 @@ Prefixes: {
 	Shattering.DisplayName: Shattering
 	Casters.DisplayName: Caster's
 	Defenders.DisplayName: Defender's
+	Fortified.DisplayName: Fortified
+	Bulky.DisplayName: Bulky
 }
 
 PrefixTooltips: {
@@ -41,6 +43,7 @@ PrefixTooltips: {
 	ArmorPenTooltip: +{0} armor penetration
 	IncreaseMinionSlotsTooltip: +{0} minion slot
 	IncreaseSentrySlotsTooltip: +{0} sentry slot
+	DamageReductionTooltip: +{0}% damage reduction
 }
 
 Configs.ServerConfig.DisplayName: Server Config

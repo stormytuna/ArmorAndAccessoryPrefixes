@@ -101,6 +101,10 @@ public class PrefixStats : GlobalItem
 			player.maxTurrets += SentrySlots.Value;
 		}
 
+		if (DamageReduction is not null) {
+			player.endurance += DamageReduction.Value;
+		}
+
         // TODO: rest of them...
     }
 
