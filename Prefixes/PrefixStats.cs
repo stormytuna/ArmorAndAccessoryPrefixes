@@ -79,6 +79,10 @@ public class PrefixStats : GlobalItem
 			player.GetModPlayer<CritDamagePlayer>().CritDamage += CritDamage.Value;
 		}
 
+		if (Aggro is not null) {
+			player.aggro += Aggro.Value;
+		}
+
         // TODO: rest of them...
     }
 

@@ -99,3 +99,63 @@ public class Exalted : CritDamagePrefix
 		valueMult *= 1.2f;
 	}
 }
+
+public class Tranquil : ArmorPrefix
+{
+    public const int AGGRO_REDUCTION = 200;
+
+	private static LocalizedText ReducedAggroTooltip;
+
+    public override void SetStaticDefaults()
+    {
+        ReducedAggroTooltip = Mod.GetLocalization($"PrefixTooltips.{nameof(ReducedAggroTooltip)}");
+    }
+
+	public override void ModifyValue(ref float valueMult) {
+		valueMult *= 1.15f;
+	}
+
+    public override void Apply(Item item)
+    {
+        if (item.TryGetGlobalItem(out PrefixStats gi)) {
+            gi.Aggro = -AGGRO_REDUCTION;
+        }
+    }
+
+    public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
+    {
+        yield return new TooltipLine(Mod, $"Prefix{nameof(ReducedAggroTooltip)}", ReducedAggroTooltip.Value) {
+            IsModifier = true
+        };
+    }
+}
+
+public class Seething : ArmorPrefix
+{
+    public const int AGGRO_INCREASE = 200;
+
+	private static LocalizedText IncreaseAggroTooltip;
+
+    public override void SetStaticDefaults()
+    {
+        IncreaseAggroTooltip = Mod.GetLocalization($"PrefixTooltips.{nameof(IncreaseAggroTooltip)}");
+    }
+
+	public override void ModifyValue(ref float valueMult) {
+		valueMult *= 1.15f;
+	}
+
+    public override void Apply(Item item)
+    {
+        if (item.TryGetGlobalItem(out PrefixStats gi)) {
+            gi.Aggro = AGGRO_INCREASE;
+        }
+    }
+
+    public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
+    {
+        yield return new TooltipLine(Mod, $"Prefix{nameof(IncreaseAggroTooltip)}", IncreaseAggroTooltip.Value) {
+            IsModifier = true
+        };
+    }
+}
