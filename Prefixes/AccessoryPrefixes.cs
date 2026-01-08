@@ -165,3 +165,51 @@ public class Extending : TileReachPrefix
         valueMult *= 1.2f;
     }
 }
+
+public abstract class PickupRangePrefix : ModPrefix
+{
+    protected static LocalizedText PickupRangeTooltip { get; private set; }
+
+    public abstract int PickupRange { get; }
+
+    public override PrefixCategory Category => PrefixCategory.Accessory;
+
+    public override void SetStaticDefaults()
+    {
+        PickupRangeTooltip = Mod.GetLocalization($"PrefixTooltips.{nameof(PickupRangePrefix)}");
+    }
+
+    public override void Apply(Item item)
+    {
+        if (item.TryGetGlobalItem(out PrefixStats gi)) {
+            gi.PickupRange = PickupRange;
+        }
+    }
+
+    public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
+    {
+        yield return new TooltipLine(Mod, $"Prefix{nameof(PickupRangeTooltip)}", PickupRangeTooltip.Format(PickupRange)) {
+            IsModifier = true
+        };
+    }
+}
+
+public class Pulling : PickupRangePrefix
+{
+	public override int PickupRange => 2;
+
+    public override void ModifyValue(ref float valueMult)
+    {
+        valueMult *= 1.1f;
+    }
+}
+
+public class Gravitating : PickupRangePrefix
+{
+	public override int PickupRange => 4;
+
+    public override void ModifyValue(ref float valueMult)
+    {
+        valueMult *= 1.2f;
+    }
+}

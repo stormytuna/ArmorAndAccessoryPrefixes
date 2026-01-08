@@ -7,11 +7,14 @@ Prefixes: {
 	Colossal.DisplayName: Colossal
 	Extending.DisplayName: Extending
 	Reaching.DisplayName: Reaching
+	Pulling.DisplayName: Pulling
+	Gravitating.DisplayName: Gravitating
 }
 
 PrefixTooltips: {
 	MinionKnockbackTooltip: +{0} minion knockback
 	TileReachTooltip: +{0} tile placement range
+	PickupRangePrefix: +{0} item pickup range
 }
 
 Configs.ServerConfig.DisplayName: Server Config

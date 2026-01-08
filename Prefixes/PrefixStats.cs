@@ -1,3 +1,4 @@
+using ArmorAndAccessoryPrefixes.Core;
 using Terraria.ModLoader.IO;
 
 namespace ArmorAndAccessoryPrefixes.Prefixes;
@@ -32,7 +33,20 @@ public class PrefixStats : GlobalItem
         MaxMana = null;
         AmmoPreservation = null;
         MinionKnockback = null;
-        // TODO: rest of them...
+		TileReach = null;
+		PickupRange = null;
+		MiningSpeed = null;
+		MaxHP = null;
+		CritDamage = null;
+		Aggro = null;
+		LifeRegen = null;
+		JumpSpeedBoost = null;
+		RunSpeedBoost = null;
+		ArmorPen = null;
+		MinionSlots = null;
+		SentrySlots = null;
+		DamageReduction = null;
+		FlightTime = null;
     }
 
     public override void UpdateEquip(Item item, Player player)
@@ -47,6 +61,10 @@ public class PrefixStats : GlobalItem
 
 		if (TileReach is not null) {
 			player.blockRange += TileReach.Value;
+		}
+
+		if (PickupRange is not null) {
+			player.GetModPlayer<GrabRangePlayer>().GrabRange += PickupRange.Value;
 		}
 
         // TODO: rest of them...
@@ -75,7 +93,61 @@ public class PrefixStats : GlobalItem
             tag[nameof(MinionKnockback)] = MinionKnockback;
         }
 
-        // TODO: rest of them...
+        if (TileReach is not null) {
+            tag[nameof(TileReach)] = TileReach;
+        }
+
+        if (PickupRange is not null) {
+            tag[nameof(PickupRange)] = PickupRange;
+        }
+
+        if (MiningSpeed is not null) {
+            tag[nameof(MiningSpeed)] = MiningSpeed;
+        }
+
+        if (MaxHP is not null) {
+            tag[nameof(MaxHP)] = MaxHP;
+        }
+
+        if (CritDamage is not null) {
+            tag[nameof(CritDamage)] = CritDamage;
+        }
+
+        if (Aggro is not null) {
+            tag[nameof(Aggro)] = Aggro;
+        }
+
+        if (LifeRegen is not null) {
+            tag[nameof(LifeRegen)] = LifeRegen;
+        }
+
+        if (JumpSpeedBoost is not null) {
+            tag[nameof(JumpSpeedBoost)] = JumpSpeedBoost;
+        }
+
+        if (RunSpeedBoost is not null) {
+            tag[nameof(RunSpeedBoost)] = RunSpeedBoost;
+        }
+
+        if (ArmorPen is not null) {
+            tag[nameof(ArmorPen)] = ArmorPen;
+        }
+
+        if (MinionSlots is not null) {
+            tag[nameof(MinionSlots)] = MinionSlots;
+        }
+
+        if (SentrySlots is not null) {
+            tag[nameof(SentrySlots)] = SentrySlots;
+        }
+
+        if (DamageReduction is not null) {
+            tag[nameof(DamageReduction)] = DamageReduction;
+        }
+
+        if (FlightTime is not null) {
+            tag[nameof(FlightTime)] = FlightTime;
+        }
     }
 
     public override void LoadData(Item item, TagCompound tag)
@@ -92,6 +164,60 @@ public class PrefixStats : GlobalItem
             MinionKnockback = tag.GetInt(nameof(MinionKnockback));
         }
 
-        // TODO: rest of them...
+        if (tag.ContainsKey(nameof(TileReach))) {
+            TileReach = tag.GetInt(nameof(TileReach));
+        }
+
+        if (tag.ContainsKey(nameof(PickupRange))) {
+            PickupRange = tag.GetInt(nameof(PickupRange));
+        }
+
+        if (tag.ContainsKey(nameof(MiningSpeed))) {
+            MiningSpeed = tag.GetInt(nameof(MiningSpeed));
+        }
+
+        if (tag.ContainsKey(nameof(MaxHP))) {
+            MaxHP = tag.GetInt(nameof(MaxHP));
+        }
+
+        if (tag.ContainsKey(nameof(CritDamage))) {
+            CritDamage = tag.GetInt(nameof(CritDamage));
+        }
+
+        if (tag.ContainsKey(nameof(Aggro))) {
+            Aggro = tag.GetInt(nameof(Aggro));
+        }
+
+        if (tag.ContainsKey(nameof(LifeRegen))) {
+            LifeRegen = tag.GetInt(nameof(LifeRegen));
+        }
+
+        if (tag.ContainsKey(nameof(JumpSpeedBoost))) {
+            JumpSpeedBoost = tag.GetInt(nameof(JumpSpeedBoost));
+        }
+
+        if (tag.ContainsKey(nameof(RunSpeedBoost))) {
+            RunSpeedBoost = tag.GetInt(nameof(RunSpeedBoost));
+        }
+
+        if (tag.ContainsKey(nameof(ArmorPen))) {
+            ArmorPen = tag.GetInt(nameof(ArmorPen));
+        }
+
+        if (tag.ContainsKey(nameof(MinionSlots))) {
+            MinionSlots = tag.GetInt(nameof(MinionSlots));
+        }
+
+        if (tag.ContainsKey(nameof(SentrySlots))) {
+            SentrySlots = tag.GetInt(nameof(SentrySlots));
+        }
+
+        if (tag.ContainsKey(nameof(DamageReduction))) {
+            DamageReduction = tag.GetInt(nameof(DamageReduction));
+        }
+
+        if (tag.ContainsKey(nameof(FlightTime))) {
+            FlightTime = tag.GetInt(nameof(FlightTime));
+        }
     }
 }
