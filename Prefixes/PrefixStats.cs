@@ -93,6 +93,14 @@ public class PrefixStats : GlobalItem
 			player.GetArmorPenetration(DamageClass.Generic) += ArmorPen.Value;
 		}
 
+		if (MinionSlots is not null) {
+			player.maxMinions += MinionSlots.Value;
+		}
+
+		if (SentrySlots is not null) {
+			player.maxTurrets += SentrySlots.Value;
+		}
+
         // TODO: rest of them...
     }
 

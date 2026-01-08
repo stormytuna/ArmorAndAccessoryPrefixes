@@ -23,6 +23,8 @@ Prefixes: {
 	Vaulting.DisplayName: Vaulting
 	Piercing.DisplayName: Piercing
 	Shattering.DisplayName: Shattering
+	Casters.DisplayName: Caster's
+	Defenders.DisplayName: Defender's
 }
 
 PrefixTooltips: {
@@ -37,6 +39,8 @@ PrefixTooltips: {
 	LifeRegenTooltip: Regenerate {0} life per second
 	JumpSpeedBoostTooltip: +{0}% jump speed
 	ArmorPenTooltip: +{0} armor penetration
+	IncreaseMinionSlotsTooltip: +{0} minion slot
+	IncreaseSentrySlotsTooltip: +{0} sentry slot
 }
 
 Configs.ServerConfig.DisplayName: Server Config

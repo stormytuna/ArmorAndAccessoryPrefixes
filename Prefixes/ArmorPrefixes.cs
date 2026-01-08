@@ -299,3 +299,71 @@ public class Shattering : ArmorPenPrefix
 		valueMult *= 1.2f;
 	}
 }
+
+public class Casters : ArmorPrefix
+{
+    public const int MINION_SLOTS = 1;
+
+	private static LocalizedText IncreaseMinionSlotsTooltip;
+
+    public override void SetStaticDefaults()
+    {
+        IncreaseMinionSlotsTooltip = Mod.GetLocalization($"PrefixTooltips.{nameof(IncreaseMinionSlotsTooltip)}");
+    }
+
+	public override bool CanRoll(Item item) {
+		return item.headSlot >= 0;
+	}
+
+	public override void ModifyValue(ref float valueMult) {
+		valueMult *= 1.2f;
+	}
+
+    public override void Apply(Item item)
+    {
+        if (item.TryGetGlobalItem(out PrefixStats gi)) {
+            gi.MinionSlots = MINION_SLOTS;
+        }
+    }
+
+    public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
+    {
+        yield return new TooltipLine(Mod, $"Prefix{nameof(IncreaseMinionSlotsTooltip)}", IncreaseMinionSlotsTooltip.Format(MINION_SLOTS)) {
+            IsModifier = true
+        };
+    }
+}
+
+public class Defenders : ArmorPrefix
+{
+    public const int SENTRY_SLOTS = 1;
+
+	private static LocalizedText IncreaseSentrySlotsTooltip;
+
+    public override void SetStaticDefaults()
+    {
+        IncreaseSentrySlotsTooltip = Mod.GetLocalization($"PrefixTooltips.{nameof(IncreaseSentrySlotsTooltip)}");
+    }
+
+	public override bool CanRoll(Item item) {
+		return item.headSlot >= 0;
+	}
+
+	public override void ModifyValue(ref float valueMult) {
+		valueMult *= 1.2f;
+	}
+
+    public override void Apply(Item item)
+    {
+        if (item.TryGetGlobalItem(out PrefixStats gi)) {
+            gi.SentrySlots = SENTRY_SLOTS;
+        }
+    }
+
+    public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
+    {
+        yield return new TooltipLine(Mod, $"Prefix{nameof(IncreaseSentrySlotsTooltip)}", IncreaseSentrySlotsTooltip.Format(SENTRY_SLOTS)) {
+            IsModifier = true
+        };
+    }
+}
