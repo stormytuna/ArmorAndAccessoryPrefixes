@@ -203,3 +203,51 @@ public class Divine : LifeRegenPrefix
 		valueMult *= 1.2f;
 	}
 }
+
+public abstract class JumpSpeedPrefix : ArmorPrefix
+{
+    public abstract float JumpSpeedBoost { get; }
+
+	private static LocalizedText JumpSpeedBoostTooltip;
+
+    public override void SetStaticDefaults()
+    {
+        JumpSpeedBoostTooltip = Mod.GetLocalization($"PrefixTooltips.{nameof(JumpSpeedBoostTooltip)}");
+    }
+
+	public override bool CanRoll(Item item) {
+		return item.legSlot >= 0;
+	}
+
+    public override void Apply(Item item)
+    {
+        if (item.TryGetGlobalItem(out PrefixStats gi)) {
+            gi.JumpSpeedBoost = JumpSpeedBoost;
+        }
+    }
+
+    public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
+    {
+        yield return new TooltipLine(Mod, $"Prefix{nameof(JumpSpeedBoostTooltip)}", JumpSpeedBoostTooltip.Format((int)(JumpSpeedBoost * 100f))) {
+            IsModifier = true
+        };
+    }
+}
+
+public class Vaulting : JumpSpeedPrefix
+{
+	public override float JumpSpeedBoost => 0.6f;
+
+	public override void ModifyValue(ref float valueMult) {
+		valueMult *= 1.1f;
+	}
+}
+
+public class Leaping : JumpSpeedPrefix
+{
+	public override float JumpSpeedBoost => 1.2f;
+
+	public override void ModifyValue(ref float valueMult) {
+		valueMult *= 1.2f;
+	}
+}

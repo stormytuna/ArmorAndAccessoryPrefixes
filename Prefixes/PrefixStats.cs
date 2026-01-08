@@ -87,6 +87,10 @@ public class PrefixStats : GlobalItem
 			player.lifeRegen += LifeRegen.Value;
 		}
 
+		if (JumpSpeedBoost is not null) {
+			player.jumpSpeedBoost += JumpSpeedBoost.Value;
+		}
+
         // TODO: rest of them...
     }
 
@@ -177,11 +181,11 @@ public class PrefixStats : GlobalItem
         }
 
         if (tag.ContainsKey(nameof(AmmoPreservation))) {
-            AmmoPreservation = tag.GetInt(nameof(AmmoPreservation));
+            AmmoPreservation = tag.GetFloat(nameof(AmmoPreservation));
         }
 
         if (tag.ContainsKey(nameof(MinionKnockback))) {
-            MinionKnockback = tag.GetInt(nameof(MinionKnockback));
+            MinionKnockback = tag.GetFloat(nameof(MinionKnockback));
         }
 
         if (tag.ContainsKey(nameof(TileReach))) {
@@ -193,7 +197,7 @@ public class PrefixStats : GlobalItem
         }
 
         if (tag.ContainsKey(nameof(MiningSpeed))) {
-            MiningSpeed = tag.GetInt(nameof(MiningSpeed));
+            MiningSpeed = tag.GetFloat(nameof(MiningSpeed));
         }
 
         if (tag.ContainsKey(nameof(MaxHP))) {
@@ -201,7 +205,7 @@ public class PrefixStats : GlobalItem
         }
 
         if (tag.ContainsKey(nameof(CritDamage))) {
-            CritDamage = tag.GetInt(nameof(CritDamage));
+            CritDamage = tag.GetFloat(nameof(CritDamage));
         }
 
         if (tag.ContainsKey(nameof(Aggro))) {
@@ -213,11 +217,11 @@ public class PrefixStats : GlobalItem
         }
 
         if (tag.ContainsKey(nameof(JumpSpeedBoost))) {
-            JumpSpeedBoost = tag.GetInt(nameof(JumpSpeedBoost));
+            JumpSpeedBoost = tag.GetFloat(nameof(JumpSpeedBoost));
         }
 
         if (tag.ContainsKey(nameof(RunSpeedBoost))) {
-            RunSpeedBoost = tag.GetInt(nameof(RunSpeedBoost));
+            RunSpeedBoost = tag.GetFloat(nameof(RunSpeedBoost));
         }
 
         if (tag.ContainsKey(nameof(ArmorPen))) {
@@ -233,7 +237,7 @@ public class PrefixStats : GlobalItem
         }
 
         if (tag.ContainsKey(nameof(DamageReduction))) {
-            DamageReduction = tag.GetInt(nameof(DamageReduction));
+            DamageReduction = tag.GetFloat(nameof(DamageReduction));
         }
 
         if (tag.ContainsKey(nameof(FlightTime))) {

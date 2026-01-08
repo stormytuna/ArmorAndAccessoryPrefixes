@@ -19,6 +19,8 @@ Prefixes: {
 	Tranquil.DisplayName: Tranquil
 	Divine.DisplayName: Divine
 	Holy.DisplayName: Holy
+	Leaping.DisplayName: Leaping
+	Vaulting.DisplayName: Vaulting
 }
 
 PrefixTooltips: {
@@ -31,6 +33,7 @@ PrefixTooltips: {
 	IncreaseAggroTooltip: Increased aggro
 	ReducedAggroTooltip: Decreased aggro
 	LifeRegenTooltip: Regenerate {0} life per second
+	JumpSpeedBoostTooltip: +{0}% jump speed
 }
 
 Configs.ServerConfig.DisplayName: Server Config
