@@ -17,6 +17,8 @@ Prefixes: {
 	Exalted.DisplayName: Exalted
 	Seething.DisplayName: Seething
 	Tranquil.DisplayName: Tranquil
+	Divine.DisplayName: Divine
+	Holy.DisplayName: Holy
 }
 
 PrefixTooltips: {
@@ -28,6 +30,7 @@ PrefixTooltips: {
 	CritDamageTooltip: +{0}% critical damage
 	IncreaseAggroTooltip: Increased aggro
 	ReducedAggroTooltip: Decreased aggro
+	LifeRegenTooltip: Regenerate {0} life per second
 }
 
 Configs.ServerConfig.DisplayName: Server Config

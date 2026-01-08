@@ -83,6 +83,10 @@ public class PrefixStats : GlobalItem
 			player.aggro += Aggro.Value;
 		}
 
+		if (LifeRegen is not null) {
+			player.lifeRegen += LifeRegen.Value;
+		}
+
         // TODO: rest of them...
     }
 

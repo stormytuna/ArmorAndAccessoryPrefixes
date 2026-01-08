@@ -159,3 +159,47 @@ public class Seething : ArmorPrefix
         };
     }
 }
+
+public abstract class LifeRegenPrefix : ArmorPrefix
+{
+    public abstract int LifeRegen { get; }
+
+	private static LocalizedText LifeRegenTooltip;
+
+    public override void SetStaticDefaults()
+    {
+        LifeRegenTooltip = Mod.GetLocalization($"PrefixTooltips.{nameof(LifeRegenTooltip)}");
+    }
+
+    public override void Apply(Item item)
+    {
+        if (item.TryGetGlobalItem(out PrefixStats gi)) {
+            gi.LifeRegen = LifeRegen;
+        }
+    }
+
+    public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
+    {
+        yield return new TooltipLine(Mod, $"Prefix{nameof(LifeRegenTooltip)}", LifeRegenTooltip.Format(LifeRegen / 2f)) {
+            IsModifier = true
+        };
+    }
+}
+
+public class Holy : LifeRegenPrefix
+{
+	public override int LifeRegen => 1;
+
+	public override void ModifyValue(ref float valueMult) {
+		valueMult *= 1.1f;
+	}
+}
+
+public class Divine : LifeRegenPrefix
+{
+	public override int LifeRegen => 2;
+
+	public override void ModifyValue(ref float valueMult) {
+		valueMult *= 1.2f;
+	}
+}
