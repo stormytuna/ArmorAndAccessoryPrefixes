@@ -13,6 +13,8 @@ Prefixes: {
 	Turbo.DisplayName: Turbo
 	Vital.DisplayName: Vital
 	Hearty.DisplayName: Hearty
+	Blessed.DisplayName: Blessed
+	Exalted.DisplayName: Exalted
 }
 
 PrefixTooltips: {
@@ -21,6 +23,7 @@ PrefixTooltips: {
 	PickupRangePrefix: +{0} item pickup range
 	MiningSpeedTooltip: +{0}% mining speed
 	MaxHPTooltip: +{0} max life
+	CritDamageTooltip: +{0}% critical damage
 }
 
 Configs.ServerConfig.DisplayName: Server Config

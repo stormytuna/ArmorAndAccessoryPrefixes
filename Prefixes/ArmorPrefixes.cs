@@ -7,7 +7,7 @@ public abstract class ArmorPrefix : ModPrefix
 {
     public sealed override PrefixCategory Category => PrefixCategory.Custom;
 
-	public sealed override bool CanRoll(Item item) {
+	public override bool CanRoll(Item item) {
 		return item.IsArmor();
 	}
 }
@@ -50,6 +50,50 @@ public class Hearty : MaxHPPrefix
 public class Vital : MaxHPPrefix
 {
 	public override int MaxHP => 30;
+
+	public override void ModifyValue(ref float valueMult) {
+		valueMult *= 1.2f;
+	}
+}
+
+public abstract class CritDamagePrefix : ArmorPrefix
+{
+    public abstract float CritDamage { get; }
+
+	private static LocalizedText CritDamageTooltip;
+
+    public override void SetStaticDefaults()
+    {
+        CritDamageTooltip = Mod.GetLocalization($"PrefixTooltips.{nameof(CritDamageTooltip)}");
+    }
+
+    public override void Apply(Item item)
+    {
+        if (item.TryGetGlobalItem(out PrefixStats gi)) {
+            gi.CritDamage = CritDamage;
+        }
+    }
+
+    public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
+    {
+        yield return new TooltipLine(Mod, $"Prefix{nameof(CritDamageTooltip)}", CritDamageTooltip.Format((int)(CritDamage * 100f))) {
+            IsModifier = true
+        };
+    }
+}
+
+public class Blessed : CritDamagePrefix
+{
+	public override float CritDamage => 0.05f;
+
+	public override void ModifyValue(ref float valueMult) {
+		valueMult *= 1.1f;
+	}
+}
+
+public class Exalted : CritDamagePrefix
+{
+	public override float CritDamage => 0.05f;
 
 	public override void ModifyValue(ref float valueMult) {
 		valueMult *= 1.2f;

@@ -71,6 +71,14 @@ public class PrefixStats : GlobalItem
 			player.pickSpeed -= MiningSpeed.Value;
 		}
 
+		if (MaxHP is not null) {
+			player.statLifeMax2 += MaxHP.Value;
+		}
+
+		if (CritDamage is not null) {
+			player.GetModPlayer<CritDamagePlayer>().CritDamage += CritDamage.Value;
+		}
+
         // TODO: rest of them...
     }
 
