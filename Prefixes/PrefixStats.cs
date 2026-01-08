@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Terraria.ModLoader.IO;
 
 namespace ArmorAndAccessoryPrefixes.Prefixes;
@@ -45,6 +44,10 @@ public class PrefixStats : GlobalItem
         if (MinionKnockback is not null) {
             player.GetKnockback(DamageClass.Summon).Base += MinionKnockback.Value;
         }
+
+		if (TileReach is not null) {
+			player.blockRange += TileReach.Value;
+		}
 
         // TODO: rest of them...
     }

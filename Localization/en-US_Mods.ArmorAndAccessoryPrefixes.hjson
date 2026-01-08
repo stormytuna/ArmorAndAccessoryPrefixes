@@ -5,7 +5,13 @@ Prefixes: {
 	Bountiful.DisplayName: Bountiful
 	Sturdy.DisplayName: Sturdy
 	Colossal.DisplayName: Colossal
+	Extending.DisplayName: Extending
+	Reaching.DisplayName: Reaching
 }
 
-PrefixTooltips.MinionKnockbackTooltip: +{0} minion knockback
+PrefixTooltips: {
+	MinionKnockbackTooltip: +{0} minion knockback
+	TileReachTooltip: +{0} tile placement range
+}
+
 Configs.ServerConfig.DisplayName: Server Config

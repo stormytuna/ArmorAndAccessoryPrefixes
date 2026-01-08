@@ -117,3 +117,51 @@ public class Colossal : MinionKnockbackPrefix
         valueMult *= 1.2f;
     }
 }
+
+public abstract class TileReachPrefix : ModPrefix
+{
+    protected static LocalizedText TileReachTooltip { get; private set; }
+
+    public abstract int TileReach { get; }
+
+    public override PrefixCategory Category => PrefixCategory.Accessory;
+
+    public override void SetStaticDefaults()
+    {
+        TileReachTooltip = Mod.GetLocalization($"PrefixTooltips.{nameof(TileReachTooltip)}");
+    }
+
+    public override void Apply(Item item)
+    {
+        if (item.TryGetGlobalItem(out PrefixStats gi)) {
+            gi.TileReach = TileReach;
+        }
+    }
+
+    public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
+    {
+        yield return new TooltipLine(Mod, $"Prefix{nameof(TileReachTooltip)}", TileReachTooltip.Format(TileReach)) {
+            IsModifier = true
+        };
+    }
+}
+
+public class Reaching : TileReachPrefix
+{
+	public override int TileReach => 1;
+
+    public override void ModifyValue(ref float valueMult)
+    {
+        valueMult *= 1.1f;
+    }
+}
+
+public class Extending : TileReachPrefix
+{
+	public override int TileReach => 2;
+
+    public override void ModifyValue(ref float valueMult)
+    {
+        valueMult *= 1.2f;
+    }
+}
