@@ -19,6 +19,7 @@ public class PrefixStats : GlobalItem
     public int? Aggro = null;
     public int? LifeRegen = null;
     public float? JumpSpeedBoost = null;
+	public float? BuffDuration = null;
     public int? ArmorPen = null;
     public int? MinionSlots = null;
     public int? SentrySlots = null;
@@ -40,6 +41,7 @@ public class PrefixStats : GlobalItem
 		Aggro = null;
 		LifeRegen = null;
 		JumpSpeedBoost = null;
+		BuffDuration = null;
 		ArmorPen = null;
 		MinionSlots = null;
 		SentrySlots = null;
@@ -87,6 +89,10 @@ public class PrefixStats : GlobalItem
 
 		if (JumpSpeedBoost is not null) {
 			player.jumpSpeedBoost += JumpSpeedBoost.Value;
+		}
+
+		if (BuffDuration is not null) {
+			player.GetModPlayer<BuffDurationPlayer>().BuffDuration += BuffDuration.Value;
 		}
 
 		if (ArmorPen is not null) {
@@ -165,6 +171,10 @@ public class PrefixStats : GlobalItem
             tag[nameof(JumpSpeedBoost)] = JumpSpeedBoost;
         }
 
+        if (BuffDuration is not null) {
+            tag[nameof(BuffDuration)] = BuffDuration;
+        }
+
         if (ArmorPen is not null) {
             tag[nameof(ArmorPen)] = ArmorPen;
         }
@@ -230,6 +240,10 @@ public class PrefixStats : GlobalItem
 
         if (tag.ContainsKey(nameof(JumpSpeedBoost))) {
             JumpSpeedBoost = tag.GetFloat(nameof(JumpSpeedBoost));
+        }
+
+        if (tag.ContainsKey(nameof(BuffDuration))) {
+            BuffDuration = tag.GetFloat(nameof(BuffDuration));
         }
 
         if (tag.ContainsKey(nameof(ArmorPen))) {

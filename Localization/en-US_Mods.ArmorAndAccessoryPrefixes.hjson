@@ -29,6 +29,8 @@ Prefixes: {
 	Bulky.DisplayName: Bulky
 	Lofty.DisplayName: Lofty
 	Soaring.DisplayName: Soaring
+	Treated.DisplayName: Treated
+	Medicated.DisplayName: Medicated
 }
 
 PrefixTooltips: {
@@ -38,8 +40,8 @@ PrefixTooltips: {
 	MiningSpeedTooltip: +{0}% mining speed
 	MaxHPTooltip: +{0} max life
 	CritDamageTooltip: +{0}% critical damage
-	IncreaseAggroTooltip: Increased aggro
-	ReducedAggroTooltip: Decreased aggro
+	IncreaseAggroTooltip: Increased enemy aggro
+	ReducedAggroTooltip: Decreased enemy aggro
 	LifeRegenTooltip: Regenerate {0} life per second
 	JumpSpeedBoostTooltip: +{0}% jump speed
 	ArmorPenTooltip: +{0} armor penetration
@@ -47,6 +49,7 @@ PrefixTooltips: {
 	IncreaseSentrySlotsTooltip: +{0} sentry slot
 	DamageReductionTooltip: +{0}% damage reduction
 	FlightTimeTooltip: +{0}s flight time
+	BuffDurationTooltip: +{0}% buff duration
 }
 
 Configs: {

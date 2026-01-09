@@ -253,6 +253,54 @@ public class Leaping : JumpSpeedPrefix
 	}
 }
 
+public abstract class BuffDurationPrefix : ArmorPrefix
+{
+    public abstract float BuffDuration { get; }
+
+	private static LocalizedText BuffDurationTooltip;
+
+    public override void SetStaticDefaults()
+    {
+        BuffDurationTooltip = Mod.GetLocalization($"PrefixTooltips.{nameof(BuffDurationTooltip)}");
+    }
+
+	public override bool CanRoll(Item item) {
+		return item.legSlot >= 0;
+	}
+
+    public override void Apply(Item item)
+    {
+        if (item.TryGetGlobalItem(out PrefixStats gi)) {
+            gi.BuffDuration = BuffDuration;
+        }
+    }
+
+    public override IEnumerable<TooltipLine> GetTooltipLines(Item item)
+    {
+        yield return new TooltipLine(Mod, $"Prefix{nameof(BuffDurationTooltip)}", BuffDurationTooltip.Format((int)(BuffDuration * 100f))) {
+            IsModifier = true
+        };
+    }
+}
+
+public class Treated : BuffDurationPrefix
+{
+	public override float BuffDuration => 0.25f;
+
+	public override void ModifyValue(ref float valueMult) {
+		valueMult *= 1.1f;
+	}
+}
+
+public class Medicated : BuffDurationPrefix
+{
+	public override float BuffDuration => 0.5f;
+
+	public override void ModifyValue(ref float valueMult) {
+		valueMult *= 1.2f;
+	}
+}
+
 public abstract class ArmorPenPrefix : ArmorPrefix
 {
     public abstract int ArmorPen { get; }
