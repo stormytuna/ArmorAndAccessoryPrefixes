@@ -1,1 +1,6 @@
-Modify this file with a description of your mod.
+- Allows armor to be reforged and to be crafted/found with prefixes, distinct from accessory prefixes
+- Adds 20 new armor prefixes
+- Adds 11 new accessory prefixes
+- Disables "odd tier" accessory prefixes (Hard, Armored, Jagged, Angry, Brisk, Hasty, Wild, Intrepid)
+- Configurable
+- Works in multiplayer

@@ -6,6 +6,8 @@
 - Configurable
 - Works in multiplayer
 
+[hr][/hr]
+
 [h2]Armor Prefixes[/h2]
 
 [table]
@@ -115,6 +117,8 @@
 	[td]Applies to leg armor pieces only[/td]
   [/tr]
 [/table]
+
+[hr][/hr]
 
 [h2]Accessory Prefixes[/h2]
 
