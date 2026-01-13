@@ -1,0 +1,73 @@
+Prefixes: {
+	Spellbound.DisplayName: Hechizado
+	Extended.DisplayName: Extendido
+	Bountiful.DisplayName: Abundante
+	Sturdy.DisplayName: Resistente
+	Colossal.DisplayName: Colosal
+	Extending.DisplayName: Extensor
+	Reaching.DisplayName: Alcanzador
+	Pulling.DisplayName: Atractor
+	Gravitating.DisplayName: Gravitatorio
+	Speedy.DisplayName: Veloz
+	Turbo.DisplayName: Turbo
+	Vital.DisplayName: Vital
+	Hearty.DisplayName: Vigoroso
+	Blessed.DisplayName: Bendito
+	Exalted.DisplayName: Exaltado
+	Seething.DisplayName: Hirviente
+	Tranquil.DisplayName: Tranquilo
+	Divine.DisplayName: Divino
+	Holy.DisplayName: Sagrado
+	Leaping.DisplayName: Saltador
+	Vaulting.DisplayName: Impulsor
+	Piercing.DisplayName: Perforante
+	Shattering.DisplayName: Demoledor
+	Casters.DisplayName: del Lanzador
+	Defenders.DisplayName: del Defensor
+	Fortified.DisplayName: Fortificado
+	Bulky.DisplayName: Voluminoso
+	Lofty.DisplayName: Elevado
+	Soaring.DisplayName: Planeador
+	Treated.DisplayName: Tratado
+	Medicated.DisplayName: Medicado
+}
+
+PrefixTooltips: {
+	MinionKnockbackTooltip: +{0} retroceso de súbditos
+	TileReachTooltip: +{0} de alcance de colocación de bloques
+	PickupRangePrefix: +{0} de alcance de recogida de objetos
+	MiningSpeedTooltip: +{0}% de velocidad de minería
+	MaxHPTooltip: +{0} de vida máxima
+	CritDamageTooltip: +{0}% de daño crítico
+	IncreaseAggroTooltip: Aumenta la agresividad de los enemigos
+	ReducedAggroTooltip: Reduce la agresividad de los enemigos
+	LifeRegenTooltip: Regenera {0} de vida por segundo
+	JumpSpeedBoostTooltip: +{0}% de velocidad de salto
+	ArmorPenTooltip: +{0} de penetración de armadura
+	IncreaseMinionSlotsTooltip: +{0} espacio de súbdito
+	IncreaseSentrySlotsTooltip: +{0} espacio de centinela
+	DamageReductionTooltip: +{0}% de reducción de daño
+	FlightTimeTooltip: +{0} s de tiempo de vuelo
+	BuffDurationTooltip: +{0}% de duración de efectos
+}
+
+Configs: {
+	ServerConfig: {
+		DisplayName: Configuración del servidor
+
+		EnableArmorPrefixes: {
+			Label: Habilitar prefijos de armadura
+			Tooltip: ""
+		}
+
+		EnableNewAccessoryPrefixes: {
+			Label: Habilitar nuevos prefijos de accesorios
+			Tooltip: ""
+		}
+
+		RemoveOddTierPrefixes: {
+			Label: Eliminar prefijos de nivel impar
+			Tooltip: Elimina los prefijos Duro, Blindado, Dentado, Furioso, Ágil, Presto, Salvaje e Intrépido de los accesorios.
+		}
+	}
+}
